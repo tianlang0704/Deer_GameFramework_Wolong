@@ -10,6 +10,7 @@
 using cfg;
 using Deer;
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
@@ -25,13 +26,8 @@ public class ConfigComponent : GameFrameworkComponent
         base.Awake();
         m_ConfigManager = gameObject.GetOrAddComponent<ConfigManager>();
     }
-    public async void LoadAllUserConfig(LoadConfigCompleteCallback loadConfigCompleteCallback)
+    public async UniTask LoadAllUserConfig()
     {
-        Tables = await m_ConfigManager.LoadAllUserConfig(loadConfigCompleteCallback);
-    }
-
-    public void MoveOnlyReadPathConfigVersionFile(MoveConfigToReadWriteCallback moveConfigToReadWriteCallback = null)
-    {
-        m_ConfigManager.AsynLoadOnlyReadPathConfigVersionFile(moveConfigToReadWriteCallback);
+        Tables = await m_ConfigManager.LoadAllUserConfig();
     }
 }

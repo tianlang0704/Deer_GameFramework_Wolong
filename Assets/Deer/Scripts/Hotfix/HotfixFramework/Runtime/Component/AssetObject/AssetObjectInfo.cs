@@ -48,7 +48,6 @@ namespace HotfixFramework.Runtime
             }
         }
 
-
         public static AssetObjectInfo Create(int serialId, string assetName, string showName)
         {
             AssetObjectInfo assetObjectInfo = ReferencePool.Acquire<AssetObjectInfo>();
@@ -56,6 +55,11 @@ namespace HotfixFramework.Runtime
             assetObjectInfo.m_AssetObjectName = assetName;
             assetObjectInfo.ShowAssetObjectName = showName;
             return assetObjectInfo;
+        }
+
+        public static void Release(AssetObjectInfo info)
+        {
+            ReferencePool.Release(info);
         }
 
         public void Clear()

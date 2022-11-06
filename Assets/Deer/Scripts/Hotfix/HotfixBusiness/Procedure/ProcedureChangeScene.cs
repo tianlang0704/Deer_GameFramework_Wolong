@@ -18,11 +18,12 @@ namespace HotfixBusiness.Procedure
     public class ProcedureChangeScene : ProcedureBase
     {
         private bool m_LoadSceneComplete;
-        private string m_nextProcedure;
+        private System.Type m_nextProcedure;
+        private string m_sceneName;
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            m_nextProcedure = procedureOwner.GetData<VarString>("nextProcedure");
+            (m_sceneName, m_nextProcedure) = ((string, System.Type))procedureOwner.GetData<VarTuple>("nextProcedure");
             OnStartLoadScene();
             GameEntry.Event.Subscribe(LoadSceneSuccessEventArgs.EventId, OnHandleLoadSceneSuccess);
             GameEntry.Event.Subscribe(LoadSceneFailureEventArgs.EventId, OnHandleLoadSceneFailure);
@@ -35,7 +36,7 @@ namespace HotfixBusiness.Procedure
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
             if (m_LoadSceneComplete)
             {
-                ChangeState(procedureOwner, Utility.Assembly.GetType(Constant.Scene.GetProcedureName(m_nextProcedure)));
+                ChangeState(procedureOwner, m_nextProcedure);
             }
         }
 
@@ -54,7 +55,7 @@ namespace HotfixBusiness.Procedure
             GameEntry.Entity.HideAllLoadedEntities();
             GameEntry.ObjectPool.ReleaseAllUnused();
             GameEntry.Resource.ForceUnloadUnusedAssets(true);
-            GameEntry.Scene.LoadScene(AssetUtility.Scene.GetSceneAsset(Constant.Scene.GetSceneName(m_nextProcedure)), Constant.AssetPriority.SceneAsset);
+            GameEntry.Scene.LoadScene(AssetUtility.Scene.GetSceneAsset(m_sceneName), Constant.AssetPriority.SceneAsset);
         }
 
         void UnloadAllScene() 

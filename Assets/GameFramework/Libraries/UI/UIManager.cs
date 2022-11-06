@@ -9,6 +9,7 @@ using GameFramework.ObjectPool;
 using GameFramework.Resource;
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 namespace GameFramework.UI
 {
@@ -761,6 +762,69 @@ namespace GameFramework.UI
             }
 
             return serialId;
+        }
+
+        public async UniTask<int> OpenUIFormAsync(string uiFormAssetName, string uiGroupName, bool pauseCoveredUIForm, object userData)
+        {
+            if (m_ResourceManager == null)
+            {
+                throw new GameFrameworkException("You must set resource manager first.");
+            }
+            if (m_UIFormHelper == null)
+            {
+                throw new GameFrameworkException("You must set UI form helper first.");
+            }
+            if (string.IsNullOrEmpty(uiFormAssetName))
+            {
+                throw new GameFrameworkException("UI form asset name is invalid.");
+            }
+            if (string.IsNullOrEmpty(uiGroupName))
+            {
+                throw new GameFrameworkException("UI group name is invalid.");
+            }
+            UIGroup uiGroup = (UIGroup)GetUIGroup(uiGroupName);
+            if (uiGroup == null)
+            {
+                throw new GameFrameworkException(Utility.Text.Format("UI group '{0}' is not exist.", uiGroupName));
+            }
+            int serialId = ++m_Serial;
+            try
+            {
+                UIFormInstanceObject uiFormInstanceObject = m_InstancePool.Spawn(uiFormAssetName);
+                var isNewInstance = false;
+                if (uiFormInstanceObject == null)
+                {
+                    isNewInstance = true;
+                    m_UIFormsBeingLoaded.Add(serialId, uiFormAssetName);
+                    var uiFormAsset = await AddressableManager.Instance.LoadAssetAsync<object>(uiFormAssetName);
+                    if (m_UIFormsToReleaseOnLoad.Contains(serialId))
+                    {
+                        m_UIFormHelper.ReleaseUIForm(uiFormAsset, null);
+                        return serialId;
+                    }
+                    uiFormInstanceObject = UIFormInstanceObject.Create(uiFormAssetName, uiFormAsset, m_UIFormHelper.InstantiateUIForm(uiFormAsset), m_UIFormHelper);
+                }
+                m_InstancePool.Register(uiFormInstanceObject, true);
+                InternalOpenUIForm(serialId, uiFormAssetName, uiGroup, uiFormInstanceObject.Target, pauseCoveredUIForm, isNewInstance, 0f, userData);
+                return serialId;
+            }
+            catch (Exception e)
+            {
+                var appendErrorMessage = Utility.Text.Format("Load UI form failure, asset name '{0}', error message '{2}'.", uiFormAssetName, e.Message);
+                if (m_OpenUIFormFailureEventHandler == null) throw new GameFrameworkException(appendErrorMessage);
+                var openUIFormFailureEventArgs = OpenUIFormFailureEventArgs.Create(serialId, uiFormAssetName, uiGroup.Name, pauseCoveredUIForm, appendErrorMessage, userData);
+                m_OpenUIFormFailureEventHandler(this, openUIFormFailureEventArgs);
+                ReferencePool.Release(openUIFormFailureEventArgs);
+                throw new GameFrameworkException(appendErrorMessage);
+            }
+            finally
+            {
+                m_UIFormsBeingLoaded.Remove(serialId);
+                if (m_UIFormsToReleaseOnLoad.Contains(serialId))
+                {
+                    m_UIFormsToReleaseOnLoad.Remove(serialId);
+                }
+            }
         }
 
         /// <summary>

@@ -17,6 +17,7 @@
       <Resource Name="AssetsHotfix/UI/UIForms/UIDialog/UIDialogForm" LoadType="0" Packed="False" />
       <Resource Name="AssetsHotfix/UI/UIForms/UILoading/UILoadingForm" LoadType="0" Packed="False" />
       <Resource Name="AssetsHotfix/UI/UIForms/UILogin/UILoginForm" LoadType="0" Packed="False" />
+      <Resource Name="AssetsHotfix/UI/UIForms/UIMiddle/UIMiddleForm" LoadType="0" Packed="False" />
       <Resource Name="AssetsHotfix/UI/UIForms/UITips/UITipsForm" LoadType="0" Packed="False" />
       <Resource Name="AssetsHotfix/UI/UIHealthBar/UIPlayerHealthBar" LoadType="0" Packed="False" />
       <Resource Name="AssetsHotfix/UI/UIShootText/Image_ShootText" LoadType="0" Packed="False" />
@@ -46,133 +47,133 @@
     </Resources>
     <Assets>
       <Asset Guid="022e3a7a56dcd374b99c91524e195749" ResourceName="AssetsNative/UI/UITemplate/ScrollView/VGridScrollView" />
-      <Asset Guid="03139b702b628084880dc28fdf9557c0" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="03d80d65abc02e94db6729e7c88ed83a" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="076f5644f7ab2694c8aaed137ee6dde9" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="027666c68ee42954c9f53891dc4e8c52" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="04546fa26c88a40488b61aeb2bc4695e" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="06c59e8a62882a442a960f8a995e4489" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="0756c9b6854bb9e4ea5beacef90a407b" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="079bc28a995bb2243b31a7172ac87689" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="0830705dcdb510542815daff74e2315d" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="0883fae378205e048ae9226b551c1848" ResourceName="AssetsHotfix/EntityPrefabs/Character/Character" />
-      <Asset Guid="08da4af1edab8554b8bfe05e4e25af60" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="0c210c5b35c48d4408b1fdf6cd3f3061" ResourceName="AssetsNative/Font/zh-cn_Commonly_used" />
-      <Asset Guid="0e6faf782362c6f4db0b0d97516ce0f9" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="0f84e936253f6824385d8d78e54a1783" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="0c4f1cd5762006644b84baaabec81c83" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="102e820a7b9321d42b127d3104a7ca5a" ResourceName="AssetsHotfix/UI/UIForms/UILoading/UILoadingForm" />
-      <Asset Guid="10c223bf236a28c4b8c483742fafc854" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="12ebf5a3867ddb645b46747801753e91" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="145a66b013c453c46827900e57cd6dbb" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="1569773c8def31c4fa91b4efe542d7d8" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="159911d0923ff8b48a5aaca284bf8bbc" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="1059457832260f847b78962b8defc069" ResourceName="AssetsHotfix/UI/UIForms/UIMiddle/UIMiddleForm" />
+      <Asset Guid="11747fb03a0bdba488b35eb403b6298d" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="134be190f13dae14582cf7d9c76f2680" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="17ec5b8f543c59345bc1257ec50c7228" ResourceName="AssetsHotfix/Scenes/Login" />
+      <Asset Guid="181376d86206f474d9a07d8773096166" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="1933ea8013f08d644bac0beabf442d59" ResourceName="AssetsNative/UI/UITemplate/ScrollView/HListScrollView" />
       <Asset Guid="1a8a6ac861a929f4890ec128197888cf" ResourceName="AssetsNative/UI/UIArt/Atlas/jindut" />
-      <Asset Guid="1c29b08a0652ccf4a9a9cd43fda664c7" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="1c7dc7a9ba5ab634db49d4388088629b" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="1b70d9066fcf1a34582472e41cbe4cf2" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="1c125f8ac83dce4419e4e2e2b3b27d6c" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="1cddfc3979dc2144098a87b4a2568741" ResourceName="AssetsHotfix/UI/UIArt/AtlasCollection/Icon" />
-      <Asset Guid="1d3845c174b41664da72b465beabc7df" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="214c02faba51d54409cfa2a60443d7d7" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="21763dd15cac8144180ec8c6305f947b" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="1dcb38ef681eb13458e40d7ec8a0a3b7" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="1f4206321f468a74a95d6995c5e97de2" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="227f8b54bf3f57b4392a62306a97b840" ResourceName="AssetsHotfix/UI/UIHealthBar/UIPlayerHealthBar" />
       <Asset Guid="24f9961372fb6c2439df9fbc7f4c0f79" ResourceName="AssetsHotfix/Scenes/Main" />
-      <Asset Guid="2704f04f5bd928841ab14cef42691638" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="28ed389f990cfe142bcfd28011e9ca5d" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="29e81b2bc3510874796f3a51feb56f0b" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="2b93710c56051db4dae97eed3e610f4d" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="2de096c2528e3da4d83ffed41c4780f7" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="2e682693a20bdfb4caaf578752941a12" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="3095e1d0989435b4dbe048a2b704ade2" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="36c7ffee52b2fcf41baadeed3dce4898" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="3aee0ac6a67422a4aa7a003f3ca32346" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="25d6cacd774063941a0c2b68014762bc" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="2abf002cb98460f46a1dfb240930ade3" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="2b39bf4c028ab994092610a4f3390f51" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="2e6bd57ffb14c0346bbdda21c1c75ed6" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="2eab857b80faa0a4ca0f1f70646f35b7" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="31c5dd5777e53a248bd4fa9115339d8c" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="32899787f2ecfbb46971e37d5add981b" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="3544ba23b37050f4dbced288f1f8b7db" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="3c31266dd0ae57c468b36845e0397b6a" ResourceName="AssetsNative/Font/wryhSDF" />
-      <Asset Guid="3d017a001bff5cc478e1dea28e923406" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="3db40c21d8b457f45a7a9a5aad72d810" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="3f3af79492ffb3245a85e07ae1737a18" ResourceName="AssetsHotfix/UI/UIArt/Atlas/Icon" />
-      <Asset Guid="4280d39b4cee33e4f86148f9df84756f" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="463ab5494b00ad44b885a5480b454078" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="40492c12b385ad1498a877a9c0839478" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="40de0eb41d9aa844b90759bd03052200" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="45630159069fe254f995e00f01520ab0" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="465d5dca8dc8beb419e30e191635f56d" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="466741b236a7df54fa016d0554d0d255" ResourceName="AssetsHotfix/UI/UIShootText/Image_ShootText" />
-      <Asset Guid="4675ee4e3d7dc6a4b85561d9e5afda96" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="4c67568bc7890c04a9747d9a8ae39d9a" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="48f642f0f4e5c0a4494d4e84754c368b" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="495eda24d854b4742b01a4e797605dc7" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="4a3616e38cd56544a8f227af5098a36e" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="4be6233779a1a9848ae87c4787eaa970" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="4fb975ee8aa9f164cb540e72e026b3ea" ResourceName="AssetsNative/UI/UIArt/Texture/loading_bg" />
-      <Asset Guid="50e75cd8c3803c246a419d833e5e6fdd" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="54525ed56250aab45bcfdef8a7585511" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="52f398a09ba40ee4a8e085fe3f5ea460" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="55132911c10aa8047bd0d678757f5794" ResourceName="AssetsNative/UI/UITemplate/UIHealthBar" />
-      <Asset Guid="55f1f7d0b5e8d134aa5b5c726b4a114d" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="55219fd0ecbb92d4ba33bda6cc9ff208" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="558584f59893abc4fb6020dad8ec5a8a" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="55b80170d580ac244b0af66f4563f875" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="5649c33117592524291a1db4a1122af8" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="56c3b222b5f9329408e788cb5f734add" ResourceName="AssetsHotfix/UI/UIArt/Texture/loading_bg" />
+      <Asset Guid="57b47dc3062a3f54da1590b00a0defba" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="5e6b77e19458ca04cbbbe56273fd493a" ResourceName="AssetsNative/UI/UIForms/UINativeMessageBox/UINativeMessageBoxForm" />
-      <Asset Guid="5e85c4407691efb4da847afe6df92a12" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="61c70908ecef17044a9fd6be7daf5b59" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="62af7f171d9bcc94183076499422b692" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="62e1c749fb647db439bb7bd1d6efe934" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="63db834640d352344a1ea7b03af7a1cf" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="643692a5da33a5e4583d5f3c3265d52c" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="67b04c40921437541983812eb40cff18" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="60d0b3b468c9d444bb7fc44212dce497" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="62818ed64e76fe141b5a0c24289945bf" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="62dcf496abb8c7f49a1d9df30f4b1253" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="6813adf37e463054fb2ca3d10a409ee4" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="688b7c1c26ccd2a4bb857aadcce68ecb" ResourceName="AssetsNative/UI/UIArt/Atlas/jindut_di" />
       <Asset Guid="6a059a129e1575d4fb9a6b8abce19c6e" ResourceName="AssetsNative/UI/UITemplate/UIButton" />
-      <Asset Guid="6fa081f9e11bcec4b86653f03d638f79" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="706869e2983ceeb42b02fc2ed1fc516a" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="70bc7d03ec759c04e95e3778641572d0" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="6d6fe3b07d09ea34f90b4cdcd981b4b2" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="6dd28013df9b73a489449491f7f99cb6" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="7128120a2b527eb46be1db4cdba62ff8" ResourceName="AssetsNative/UI/UIForms/UINativeLoading/UINativeLoadingForm" />
-      <Asset Guid="722f33d486033e643a48fec23bb3b02c" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="7247e1fea0760b54caa253020097fcdf" ResourceName="AssetsNative/UI/UITemplate/ScrollView/ScrollVItemPrefab" />
-      <Asset Guid="7293a3bb8ff44b34d9ec0bca1b493f41" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="738913e15c63bd148b4e1b8996262bc4" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="7450d3b4b0e0ed84abc7618cf0c6804e" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="72a157945efb82c49857355e39b7cf93" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="72e9f1b92e20cef408236a27ebdcaa52" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="745e65d5ee916dd47944050290a22205" ResourceName="AssetsNative/UI/UITemplate/Joystick/Joystick" />
-      <Asset Guid="753bf06931b85804588f24bacc66e4cb" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="7854bd770954f194c9315da094f47703" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="7a0547f86d9b636419765aadcd5ac580" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="7a1da81cd6d4d6e41a36c6e26523dba8" ResourceName="AssetsHotfix/UI/UIForms/UIBag/UIBagForm" />
-      <Asset Guid="7dff975b7ca0fe744bb5f29cc1246f30" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="7e5e63f1d57b0bf4092680067f6a1edd" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="80039745d36e31a498f88139649bc68b" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="7c86c11efa13fe746959feab23cd93db" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="80a9390956026d548935e7833d3257fa" ResourceName="AssetsHotfix/UI/UIShootText/ShootText_Pure" />
-      <Asset Guid="83044c99d53f20d4db2574a1894c2e6d" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="8359e80d98339f941bdc5fcadd131ab1" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="8650547868476f545ad072a9ad684ef1" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="88abe9aea2242424fad83c6c3f4015ef" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="8bc3e4f7a91df45419bff449770415c2" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="80ed6841e029ece4a9c91a3a77729a28" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="834b0ef9f8ad8fb4f90c2776ee970130" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="839ce32ff4c03ac40a50fcf60a7706a3" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="856e3cbb5b5f545418ed19dd22b400a3" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="8650ccd89949f634b9825deae845f62d" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="88177967e55ed454a99cbb35a8c96e24" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="8aa99fe3e9835b34fb2b422bb2c48959" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="8c2e5e9a2788f4744810d50124828627" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="8cc440a2ce27e6b48bf710375e7e4b68" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="8e7f3b94c90e11748be8052d4e85576f" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="8ef5ceb1a2ffc5746b20f818db0d36c6" ResourceName="AssetsHotfix/UI/UIForms/UITips/UITipsForm" />
-      <Asset Guid="9225a696a9fb2a34aa2c5f4bf683fa97" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="92b428eb9080c3943a93932c4a956b3a" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="96f23b938e3088e47b507726ded70f5d" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="915fa318bdcc61a43ada227630c7e3ab" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="9364fcb11f7158b429fbaf8283b70c95" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="967fcb3cd3713bb4fb1d3e9173a4879b" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="975d78522d5bdca42a5af541a724aef2" ResourceName="AssetsNative/UI/UITemplate/Progress" />
-      <Asset Guid="994d32780df045e44b45f77d6a897e86" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="9a4f603b234c26a47ae1d6a452fe7c21" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="9c1ab7155b1a1ea469f8ccbfabc4117c" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="9c358751848aed44388f9be2d7456b7b" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="9f88ac9e0dc5fb24e848fc3907026a74" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="a2d00a141c919724fa3a88a81a8963d0" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="a34d7501f0de5ac468173ebf2629a14a" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="9a11c38045b20f24bab783e80254800a" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="9bb893c3e246f234180da9a46facf888" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="9ce96af0a083d794f92b93b44b2dcc33" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="a493fd7876190a04b972bf7b3f90d962" ResourceName="AssetsNative/UI/UITemplate/ScrollView/HGridScrollView" />
       <Asset Guid="a4ecbc6afc651d94888a4b56e95f846f" ResourceName="AssetsHotfix/UI/UIForms/UIBag/UIBag_SubUI" />
-      <Asset Guid="a5c272b7a973f3444a9f1f1f853dca3d" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="a5d749ed4b88aab458360733665282ad" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="a7c67a78cff8bbb4c98afc1452728b69" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="a9bb0d5df7af0c840935b6ee51debd27" ResourceName="AssetsHotfix/UI/UIArt/Texture/login_bg" />
-      <Asset Guid="aa782cb17474bb64d94e163dccead0dd" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="ae006438e7ad60b49bf08cfd40706e37" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="aec76bde5ee3c3741911dfc0d0497c92" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="aff204a74586b36438d8aedafd172f5d" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="b5642633dff36d74caa2d5e602a2e99c" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="be3b0cf9466a9734eab666893bf67141" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="a9dadb61bf4de604397cbd647c19c8c1" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="ab5711323bffb4d4080554cd190c956e" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="ab99015bbb4c3c94dbf9c78fed16eee1" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="b6d80ff62a648164194594556008d0d9" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="b83a99578d7f0fd478cc6158afbc157d" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="b96ccb01804d61d4d94d636ffa5de1c5" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="c2a29dff23aabb84cb768f685dd294de" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="c3bacb295d4014847a8ef29520f9d1a2" ResourceName="AssetsHotfix/UI/UIShootText/Text_ShootText" />
-      <Asset Guid="cea96208c1e079647978f19c37bcd7e6" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="ca1262c0b85009445aa1aa393ff29583" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="caa040f45a4392440934757df8a71b6a" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="cad7a21562e227a46991dc1dd02ae6f0" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="d021a4349078f974ca8eb3f903f1fbd6" ResourceName="AssetsNative/UI/UITemplate/UIToggle" />
-      <Asset Guid="d259967ba0d19a94eb45a05c9748136a" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="d2f90e76f511c6c4e9cbc70cb94a6338" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="d3dc13aba3839b942975d25ada72547c" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="d5ac5cc365a9d7f469a91f84c485f9f2" ResourceName="AssetsNative/UI/UITemplate/UIModel" />
-      <Asset Guid="d669c03461f55a84a9c4cfd1ff7ce39d" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="d6cd74ebb858ee942b3b186632a698bd" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="d6f51bffafabf4544a2f87bd05506b13" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="da35d749346122a488ee8860e1afd9be" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="da3dc3fb0f7f5034da8dbde294ad87b2" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="dbc1d4bc6018f1f4f928156f5e3ffe21" ResourceName="AssetsHotfix/GameConfigs/MainCameraBlends" />
-      <Asset Guid="e1814884bfa536448b2e60ed928ae5e1" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="e41de5d16c3cfa04da3d39b8aebad451" ResourceName="AssetsHotfix/UI/UIForms/UIDialog/UIDialogForm" />
-      <Asset Guid="e78083cfc4a70f84d857aed3f532ec4d" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="e60b05fd961075b4bb42e185b57aee6f" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="e61a6f969c4a16b45b4f55b3770f40d2" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="e827f6256d45d1a4c8936370bebe2973" ResourceName="AssetsNative/UI/UITemplate/UISpriteAnimation" />
       <Asset Guid="eb8a17d9eeaf7634084b3e278e3ef4b0" ResourceName="AssetsHotfix/UI/UIForms/UILogin/UILoginForm" />
-      <Asset Guid="eb8f3346d634a724a9ef4cbdd576eeaf" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="eb957ea0de01a2a48b97e9dcd4e9a6be" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="ec2ada8d5b3d0154a8edbefa51801e76" ResourceName="AssetsNative/UI/UITemplate/UIInputField" />
+      <Asset Guid="ec78766d2d4881f4aa5fe4e20f46ae64" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="ee434b8e75f92804ca01e3be759e7c7f" ResourceName="AssetsNative/UI/UITemplate/UIForm" />
-      <Asset Guid="ef20543e03ad19a4f902c74903185451" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="f2d308365120fa34f9c4663ad62e76ca" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="f1c0e3a2116a3204bba8d33c27ae6187" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="f296933e872587840bb3999f2da0ae14" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="f346b20fa437b3d47a24be4efee602a6" ResourceName="AssetsHotfix/Assembly" />
       <Asset Guid="f3ab0d53e9c425d4da9724fab4bfd7d9" ResourceName="AssetsHotfix/GF/Customs" />
       <Asset Guid="f4fa68baee1efc34e801c1853c42e375" ResourceName="AssetsNative/UI/UITemplate/ScrollView/VListScrollView" />
-      <Asset Guid="f863c6abd4b07cd4780a11a7943c9a0e" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="fd9d48d7f0bc1a842ba4652be2712442" ResourceName="AssetsHotfix/Assembly" />
-      <Asset Guid="ff3fee8a0a7b71644a3e298f65231ace" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="f56efe3897e080143971624647825108" ResourceName="AssetsHotfix/Assembly" />
+      <Asset Guid="fa54094b4449e0f468cd10a8d57359a8" ResourceName="AssetsHotfix/Assembly" />
     </Assets>
   </ResourceCollection>
 </UnityGameFramework>

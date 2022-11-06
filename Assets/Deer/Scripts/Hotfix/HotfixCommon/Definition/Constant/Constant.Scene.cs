@@ -14,80 +14,9 @@ public static partial class Constant
 {
     public static class Scene 
     {
-        public static Dictionary<string, string> Scenes = new Dictionary<string,  string>() {
-            {ProcedureEnum.ProcedureMain.ToString(),"HotfixBusiness.Procedure.ProcedureMain&Main"},
-            {ProcedureEnum.ProcedureBattle.ToString(),"HotfixBusiness.Procedure.ProcedureBattle&PVE_AR"},
-            {ProcedureEnum.ProcedureArCatch.ToString(),"HotfixBusiness.Procedure.ProcedureArCatch&FightingScene_AR"},
-        };
-
-        public static string GetProcedureName(ProcedureEnum procedureEnum)
-        {
-            return GetProcedureName(procedureEnum.ToString());
-        }
-        public static string GetProcedureName(string procedureEnumName)
-        {
-            string procedureAndScene = string.Empty;
-            if (Scenes.TryGetValue(procedureEnumName,out procedureAndScene))
-            {
-                string[] strs = procedureAndScene.Split('&');
-                if (strs.Length > 0)
-                {
-                    return strs[0];
-                }
-                else
-                {
-                    Logger.Error($"In GetProcedureName method, Scenes dic 中{procedureEnumName.ToString()}对应的value值格式有问题，请查找是否存在【&】符号连接！");
-                }
-            }
-            else
-            {
-                Logger.Error($"In GetProcedureName method, Scenes dic 中{procedureEnumName.ToString()}对应的key值不存在！");
-            }
-
-            return string.Empty;
-        }
-        public static string GetSceneName(string procedureEnumName)
-        {
-            string procedureAndScene = string.Empty;
-            if (Scenes.TryGetValue(procedureEnumName,out procedureAndScene))
-            {
-                string[] strs = procedureAndScene.Split('&');
-                if (strs.Length > 0)
-                {
-                    return strs[1];
-                }
-                else
-                {
-                    Logger.Error($"In GetSceneName method, Scenes dic 中{procedureEnumName.ToString()}对应的value值格式有问题，请查找是否存在【&】符号连接！");
-                }
-            }
-            else
-            {
-                Logger.Error($" In GetSceneName method, Scenes dic 中{procedureEnumName.ToString()}对应的key值不存在！");
-            }
-            return string.Empty;
-        }
-        public static string GetSceneNameByProcedureName(string procedureName)
-        {
-            string procedureAndScene = string.Empty;
-            foreach (var scene in Scenes)
-            {
-                procedureAndScene = scene.Value;
-                string[] strs = procedureAndScene.Split('&');
-                if (strs.Length > 0)
-                {
-                    if (strs[0].Equals(procedureName))
-                    {
-                        return strs[1];
-                    }
-                }
-                else
-                {
-                    Logger.Error($"In GetSceneName method, Scenes dic 中{procedureName}对应的value值格式有问题，请查找是否存在【&】符号连接！");
-                }
-            }
-            return string.Empty;
-        }
+        public const string DeerLauncher = "DeerLauncher";
+        public const string Main = "Main";
+        public const string Login = "Login";
     }
 
 }

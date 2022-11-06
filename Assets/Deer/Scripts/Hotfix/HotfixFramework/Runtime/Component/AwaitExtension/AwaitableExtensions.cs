@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using GameFramework;
 using GameFramework.DataTable;
 using GameFramework.Event;
@@ -179,69 +180,6 @@ namespace UGFExtensions.Await
                 tcs.SetException(new GameFrameworkException(ne.ErrorMessage));
                 s_SceneTcs.Remove(ne.SceneAssetName);
             }
-        }
-
-        /// <summary>
-        /// 加载资源（可等待）
-        /// </summary>
-        public static Task<T> LoadAssetAsync<T>(this ResourceComponent resourceComponent, string assetName)
-            where T : UnityEngine.Object
-        {
-#if UNITY_EDITOR
-            TipsSubscribeEvent();
-#endif
-            TaskCompletionSource<T> loadAssetTcs = new TaskCompletionSource<T>();
-            resourceComponent.LoadAsset(assetName, typeof(T), new LoadAssetCallbacks(
-                (tempAssetName, asset, duration, userdata) =>
-                {
-                    var source = loadAssetTcs;
-                    loadAssetTcs = null;
-                    T tAsset = asset as T;
-                    if (tAsset != null)
-                    {
-                        source.SetResult(tAsset);
-                    }
-                    else
-                    {
-                        source.SetException(new GameFrameworkException(
-                            $"Load asset failure load type is {asset.GetType()} but asset type is {typeof(T)}."));
-                    }
-                },
-                (tempAssetName, status, errorMessage, userdata) =>
-                {
-                    loadAssetTcs.SetException(new GameFrameworkException(errorMessage));
-                }
-            ));
-
-            return loadAssetTcs.Task;
-        }
-
-        /// <summary>
-        /// 加载多个资源（可等待）
-        /// </summary>
-        public static async Task<T[]> LoadAssetsAsync<T>(this ResourceComponent resourceComponent, string[] assetName) where T : UnityEngine.Object
-        {
-#if UNITY_EDITOR
-            TipsSubscribeEvent();
-#endif
-            if (assetName == null)
-            {
-                return null;
-            }
-            T[] assets = new T[assetName.Length];
-            Task<T>[] tasks = new Task<T>[assets.Length];
-            for (int i = 0; i < tasks.Length; i++)
-            {
-                tasks[i] = resourceComponent.LoadAssetAsync<T>(assetName[i]);
-            }
-
-            await Task.WhenAll(tasks);
-            for (int i = 0; i < assets.Length; i++)
-            {
-                assets[i] = tasks[i].Result;
-            }
-
-            return assets;
         }
 
 

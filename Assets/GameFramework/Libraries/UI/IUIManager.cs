@@ -9,6 +9,7 @@ using GameFramework.ObjectPool;
 using GameFramework.Resource;
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 
 namespace GameFramework.UI
 {
@@ -309,6 +310,8 @@ namespace GameFramework.UI
         /// <param name="userData">用户自定义数据。</param>
         /// <returns>界面的序列编号。</returns>
         int OpenUIForm(string uiFormAssetName, string uiGroupName, int priority, bool pauseCoveredUIForm, object userData);
+
+        UniTask<int> OpenUIFormAsync(string uiFormAssetName, string uiGroupName, bool pauseCoveredUIForm, object userData);
 
         /// <summary>
         /// 关闭界面。

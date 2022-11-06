@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: DeerGlobalSettings
   m_EditorClassIdentifier: 
   m_FrameworkGlobalSettings:
-    m_ScriptAuthor: AlanDu
+    m_ScriptAuthor: CMonk
     m_ScriptVersion: 0.1
     m_AppStage: 1
     m_ResourcesArea:
-      m_ResAdminType: Wolong
+      m_ResAdminType: CMonk
       m_ResAdminCode: 100
-      m_ServerType: 2
+      m_ServerType: 1
       m_CleanCommitPathRes: 1
-      m_InnerResourceSourceUrl: http://192.168.29.51:9091/unity
-      m_ExtraResourceSourceUrl: http://121.4.195.168:8088
-      m_FormalResourceSourceUrl: http://121.4.195.168:8088
+      m_InnerResourceSourceUrl: http://127.0.0.1:8080/unity
+      m_ExtraResourceSourceUrl: 
+      m_FormalResourceSourceUrl: 
     m_AtlasFolder: Assets/Deer/AssetsHotfix/UI/UIArt/Atlas
     m_ResourceVersionFileName: ResourceVersion.txt
     WindowsAppUrl: 
@@ -53,21 +53,89 @@ MonoBehaviour:
     - HotfixFramework.Runtime.dll
     - HotfixBusiness.dll
     AOTMetaAssemblies:
+    - Assembly-CSharp-firstpass.dll
+    - Assembly-CSharp.dll
+    - AstarPathfindingProject.dll
+    - BrunoMikoski.AnimationSequencer.dll
+    - Cinemachine.dll
+    - DOTween.dll
+    - DOTween.Modules.dll
+    - DOTweenPro.dll
+    - GameFramework.dll
+    - Google.Protobuf.dll
+    - HybridCLR.Runtime.dll
+    - ICSharpCode.SharpZipLib.dll
+    - Main.Runtime.dll
+    - Mono.Security.dll
     - mscorlib.dll
-    - System.dll
-    - System.Core.dll
+    - Pathfinding.ClipperLib.dll
+    - Pathfinding.Ionic.Zip.Reduced.dll
+    - Pathfinding.Poly2Tri.dll
+    - PlayerPrefsEditor.dll
+    - QHierarchyNullable.dll
+    - QHierarchyRuntime.dll
+    - Sirenix.OdinInspector.Attributes.dll
+    - Sirenix.Serialization.Config.dll
+    - Sirenix.Serialization.dll
+    - Sirenix.Utilities.dll
+    - SuperScrollViewProject.dll
     - System.Configuration.dll
+    - System.Core.dll
+    - System.dll
     - System.Numerics.dll
     - System.Runtime.CompilerServices.Unsafe.dll
     - System.Xml.dll
-    - Main.Runtime.dll
-    - HybridCLR.Runtime.dll
-    - Gameframework.dll
-    - UnityGameFramework.Runtime.dll
-    - Google.Protobuf.dll
+    - UniTask.Addressables.dll
     - UniTask.dll
-    - Cinemachine.dll
-    - PlayerPrefsEditor.dll
+    - UniTask.DOTween.dll
+    - UniTask.Linq.dll
+    - UniTask.TextMeshPro.dll
+    - Unity.Burst.dll
+    - Unity.Burst.Unsafe.dll
+    - Unity.InputSystem.dll
+    - Unity.Mathematics.dll
+    - Unity.RenderPipeline.Universal.ShaderLibrary.dll
+    - Unity.RenderPipelines.Core.Runtime.dll
+    - Unity.RenderPipelines.Universal.Runtime.dll
+    - Unity.TextMeshPro.dll
+    - Unity.Timeline.dll
+    - UnityEngine.AIModule.dll
+    - UnityEngine.AndroidJNIModule.dll
+    - UnityEngine.AnimationModule.dll
+    - UnityEngine.AssetBundleModule.dll
+    - UnityEngine.AudioModule.dll
+    - UnityEngine.CoreModule.dll
+    - UnityEngine.DirectorModule.dll
+    - UnityEngine.dll
+    - UnityEngine.GridModule.dll
+    - UnityEngine.ImageConversionModule.dll
+    - UnityEngine.IMGUIModule.dll
+    - UnityEngine.InputLegacyModule.dll
+    - UnityEngine.InputModule.dll
+    - UnityEngine.JSONSerializeModule.dll
+    - UnityEngine.ParticleSystemModule.dll
+    - UnityEngine.Physics2DModule.dll
+    - UnityEngine.PhysicsModule.dll
+    - UnityEngine.SharedInternalsModule.dll
+    - UnityEngine.SpriteShapeModule.dll
+    - UnityEngine.SubsystemsModule.dll
+    - UnityEngine.TerrainModule.dll
+    - UnityEngine.TerrainPhysicsModule.dll
+    - UnityEngine.TextCoreFontEngineModule.dll
+    - UnityEngine.TextCoreTextEngineModule.dll
+    - UnityEngine.TextRenderingModule.dll
+    - UnityEngine.TilemapModule.dll
+    - UnityEngine.UI.dll
+    - UnityEngine.UIElementsModule.dll
+    - UnityEngine.UIElementsNativeModule.dll
+    - UnityEngine.UIModule.dll
+    - UnityEngine.UnityAnalyticsModule.dll
+    - UnityEngine.UnityWebRequestModule.dll
+    - UnityEngine.VFXModule.dll
+    - UnityEngine.VideoModule.dll
+    - UnityEngine.VRModule.dll
+    - UnityEngine.XRModule.dll
+    - UnityGameFramework.Runtime.dll
     LogicMainDllName: HotfixMain.dll
     AssemblyTextAssetExtension: .bytes
     AssemblyTextAssetPath: Deer/AssetsHotfix/Assembly

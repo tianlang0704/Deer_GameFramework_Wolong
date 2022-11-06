@@ -11,6 +11,7 @@ using GameFramework.ObjectPool;
 using GameFramework.Resource;
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityGameFramework.Runtime;
 
@@ -23,12 +24,8 @@ namespace HotfixFramework.Runtime
     public class AssetObjectComponent : GameFrameworkComponent
     {
         private IObjectPool<AssetInstanceObject> m_InstancePool; //AssetObject资源池   
-        private LoadAssetCallbacks m_LoadAssetCallbacks; //AssetObject加载回调
-        private Dictionary<int, string> m_AssetObjectBeingLoaded; //正在加载的AssetObject列表      
-        private HashSet<int> m_AssetObjectToReleaseOnLoad; //加载完毕要卸载的AssetObject  
-        private string m_luaModuleHelperName = "AssetObjectManagerHelper";
-        private int m_nLoadSerial = 0;
         private Dictionary<int, object> m_AssetObjectToLoad;
+        private HashSet<object> m_AssetObjects;
         [SerializeField]
         private float m_InstanceAutoReleaseInterval = 5f;
 
@@ -40,9 +37,6 @@ namespace HotfixFramework.Runtime
 
         [SerializeField]
         private int m_InstancePriority = 0;
-
-        private Dictionary<int, LoadAssetObjectComplete> m_LoadAssetObjectComplete;
-
 
         public float InstanceAutoReleaseInterval
         {
@@ -100,11 +94,8 @@ namespace HotfixFramework.Runtime
         protected override void Awake()
         {
             base.Awake();
-            m_LoadAssetCallbacks = new LoadAssetCallbacks(LoadAssetObjectSuccessCallback, LoadAssetObjectFailureCallback, LoadAssetObjectUpdateCallback, LoadAssetObjectDependencyAssetCallback);
-            m_AssetObjectBeingLoaded = new Dictionary<int, string>();
-            m_AssetObjectToReleaseOnLoad = new HashSet<int>();
-            m_LoadAssetObjectComplete = new Dictionary<int, LoadAssetObjectComplete>();
             m_AssetObjectToLoad = new Dictionary<int, object>();
+            m_AssetObjects = new HashSet<object>();
         }
 
         private void Start()
@@ -117,42 +108,52 @@ namespace HotfixFramework.Runtime
         }
         protected void OnDestroy()
         {
-            m_AssetObjectBeingLoaded.Clear();
-            m_AssetObjectToReleaseOnLoad.Clear();
-            m_LoadAssetCallbacks = null;
             m_InstancePool = null;
         }
-        public void LoadAssetAsync(int nLoadSerial, string strPath, string strShowName,Type assetType, LoadAssetObjectComplete loadAssetObjectComplete = null)
+
+        public async UniTask<T> LoadAssetAsync<T>(string strPath) where T : UnityEngine.Object
         {
-            m_LoadAssetObjectComplete.Add(nLoadSerial, loadAssetObjectComplete);
+            // 检查缓存
             AssetInstanceObject assetObject = m_InstancePool.Spawn(strPath);
-            if (assetObject == null)
-            {
-                AssetObjectInfo assetObjectInfo = AssetObjectInfo.Create(nLoadSerial, strPath, strShowName);
-                m_AssetObjectBeingLoaded.Add(nLoadSerial, strPath);
-                GameEntry.Resource.LoadAsset(strPath, assetType, Constant.AssetPriority.SceneUnit, m_LoadAssetCallbacks, assetObjectInfo);
+            if (assetObject != null) {
+                return assetObject.Target as T;
             }
-            else
+            // 加载
+            try
             {
-                CallFunction("LoadAssetObjectSuccessCallback", assetObject.Target, nLoadSerial);
+                var asset = await GameEntryMain.Resource.LoadAsset<T>(strPath);
+                // 加入缓存
+                assetObject = AssetInstanceObject.Create(strPath, asset, Instantiate((UnityEngine.Object)asset));
+                m_InstancePool.Register(assetObject, true);
+                m_AssetObjects.Add(asset);
+                return asset;
+            }
+            // 处理错误
+            catch (Exception e)
+            {
+                string appendErrorMessage =
+                    Utility.Text.Format("Load assetObject failure, asset name '{0}' , error message '{2}'.", strPath,
+                        e.Message);
+                Log.Error(appendErrorMessage);
+                return null;
             }
         }
 
-        public void HideObject(int serialId) 
+        public void HideObject(UnityEngine.Object asset) 
         {
-            RecycleAsset(serialId);
+            RecycleAsset(asset);
         }
-        public void RecycleAsset(int serialId) 
+        public void RecycleAsset(UnityEngine.Object asset) 
         {
-            if (m_AssetObjectToLoad.TryGetValue(serialId, out object obj))
+            if (m_AssetObjects.Contains(asset))
             {
-                GameObject tempObj = obj as GameObject;
+                GameObject tempObj = asset as GameObject;
                 if (tempObj != null)
                 {
                     tempObj.SetActive(false);
                 }
-                Unspawn(obj);
-                m_AssetObjectToLoad.Remove(serialId);
+                Unspawn(asset);
+                m_AssetObjects.Remove(asset);
             }
         }
         /// <summary>
@@ -167,107 +168,6 @@ namespace HotfixFramework.Runtime
                 return;
             }
             m_InstancePool.Unspawn(asset);
-        }
-        /// <summary>
-        /// 是否正在加载预制体
-        /// </summary>
-        /// <param name="uiFormAssetName">界面资源名称</param>
-        /// <returns>是否正在加载预制体</returns>
-        public bool IsLoadingAssetObjectById(int serialId)
-        {
-            return m_AssetObjectBeingLoaded.ContainsKey(serialId);
-        }
-        /// <summary>
-        /// 是否正在加载预制体
-        /// </summary>
-        /// <param name="assetObjectName">资源名称</param>
-        /// <returns>是否正在加载预制体</returns>
-        public bool IsLoadingAssetObject(string assetObjectName)
-        {
-            return m_AssetObjectBeingLoaded.ContainsValue(assetObjectName);
-        }
-        private void LoadAssetObjectDependencyAssetCallback(string assetName, string dependencyAssetName, int loadedCount, int totalCount, object userData)
-        {
-            AssetObjectInfo assetObjectInfo = (AssetObjectInfo)userData;
-            if (assetObjectInfo == null)
-            {
-                Log.Error("Open AssetObject info is invalid.");
-            }
-        }
-
-        private void LoadAssetObjectUpdateCallback(string assetName, float progress, object userData)
-        {
-            AssetObjectInfo assetObjectInfo = (AssetObjectInfo)userData;
-            if (assetObjectInfo == null)
-            {
-                Log.Error("Open AssetObject info is invalid.");
-            }
-        }
-
-        private void LoadAssetObjectFailureCallback(string assetName, LoadResourceStatus status, string errorMessage, object userData)
-        {
-            AssetObjectInfo assetObjectInfo = (AssetObjectInfo)userData;
-            if (assetObjectInfo == null)
-            {
-                throw new GameFrameworkException("Open AssetObject info is invalid.");
-            }
-
-            if (m_AssetObjectToReleaseOnLoad.Contains(assetObjectInfo.SerialId))
-            {
-                m_AssetObjectToReleaseOnLoad.Remove(assetObjectInfo.SerialId);
-                ReferencePool.Release(assetObjectInfo);
-                return;
-            }
-
-            m_AssetObjectBeingLoaded.Remove(assetObjectInfo.SerialId);
-
-            string appendErrorMessage = Utility.Text.Format("Load assetObject failure, asset name '{0}', status '{1}' , error message '{2}'.", assetName, status.ToString(), errorMessage);
-            CallFunction("LoadAssetObjectFailureCallback", assetObjectInfo.SerialId);
-
-            ReferencePool.Release(assetObjectInfo);
-            Log.Error(appendErrorMessage);
-        }
-
-        private void LoadAssetObjectSuccessCallback(string assetName, object asset, float duration, object userData)
-        {
-            AssetObjectInfo assetObjectInfo = (AssetObjectInfo)userData;
-            if (assetObjectInfo == null)
-            {
-                throw new Exception("Open AssetObject info is invalid.");
-            }
-            if (m_AssetObjectToReleaseOnLoad.Contains(assetObjectInfo.SerialId))
-            {
-                m_AssetObjectToReleaseOnLoad.Remove(assetObjectInfo.SerialId);
-                ReferencePool.Release(assetObjectInfo);
-                GameEntry.Resource.UnloadAsset(asset);
-                return;
-            }
-            m_AssetObjectBeingLoaded.Remove(assetObjectInfo.SerialId);
-            AssetInstanceObject assetObject = AssetInstanceObject.Create(assetName, asset, Instantiate((UnityEngine.Object)asset));
-            m_InstancePool.Register(assetObject, true);
-            CallFunction("LoadAssetObjectSuccessCallback", assetObject.Target, assetObjectInfo.SerialId);
-            ReferencePool.Release(assetObjectInfo);
-
-        }
-        private void CallFunction(string func, int serialId)
-        {
-            if (m_LoadAssetObjectComplete.TryGetValue(serialId, out LoadAssetObjectComplete loadAssetObjectComplete))
-            {
-                loadAssetObjectComplete?.Invoke(false, null, 0);
-            }
-        }
-        private void CallFunction(string func, object gameObject, int serialId)
-        {
-            m_AssetObjectToLoad.Add(serialId, gameObject);
-            if (m_LoadAssetObjectComplete.TryGetValue(serialId, out LoadAssetObjectComplete loadAssetObjectComplete))
-            {
-                loadAssetObjectComplete?.Invoke(true, gameObject, serialId);
-            }
-        }
-        public int GenSerialId()
-        {
-            m_nLoadSerial += 1;
-            return m_nLoadSerial;
         }
     }
 }

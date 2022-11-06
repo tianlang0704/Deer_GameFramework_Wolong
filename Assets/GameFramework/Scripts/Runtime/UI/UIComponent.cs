@@ -10,6 +10,7 @@ using GameFramework.ObjectPool;
 using GameFramework.Resource;
 using GameFramework.UI;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace UnityGameFramework.Runtime
@@ -197,14 +198,15 @@ namespace UnityGameFramework.Runtime
                 return;
             }
 
-            if (baseComponent.EditorResourceMode)
-            {
-                m_UIManager.SetResourceManager(baseComponent.EditorResourceHelper);
-            }
-            else
-            {
-                m_UIManager.SetResourceManager(GameFrameworkEntry.GetModule<IResourceManager>());
-            }
+            // if (baseComponent.EditorResourceMode)
+            // {
+            //     m_UIManager.SetResourceManager(baseComponent.EditorResourceHelper);
+            // }
+            // else
+            // {
+            //     m_UIManager.SetResourceManager(GameFrameworkEntry.GetModule<IResourceManager>());
+            // }
+            m_UIManager.SetResourceManager(AddressableManager.Instance);
 
             m_UIManager.SetObjectPoolManager(GameFrameworkEntry.GetModule<IObjectPoolManager>());
             m_UIManager.InstanceAutoReleaseInterval = m_InstanceAutoReleaseInterval;
@@ -582,6 +584,11 @@ namespace UnityGameFramework.Runtime
         public int OpenUIForm(string uiFormAssetName, string uiGroupName, int priority, bool pauseCoveredUIForm, object userData)
         {
             return m_UIManager.OpenUIForm(uiFormAssetName, uiGroupName, priority, pauseCoveredUIForm, userData);
+        }
+
+        public async UniTask<int> OpenUIFormAsync(string uiFormAssetName, string uiGroupName, bool pauseCoveredUIForm, object userData)
+        {
+            return await m_UIManager.OpenUIFormAsync(uiFormAssetName, uiGroupName, pauseCoveredUIForm, userData);
         }
 
         /// <summary>

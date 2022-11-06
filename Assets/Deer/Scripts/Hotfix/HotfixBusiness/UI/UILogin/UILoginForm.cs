@@ -1,11 +1,13 @@
-// ================================================
+﻿// ================================================
 //描 述:
 //作 者:杜鑫
 //创建时间:2022-06-18 00-19-22
-//修改作者:杜鑫
-//修改时间:2022-06-18 00-19-22
+//修改作者:CMonk
+//修改时间:2022-11-29 13-48-37
 //版 本:0.1 
 // ===============================================
+
+using cfg;
 using HotfixBusiness.Procedure;
 using HotfixFramework.Runtime;
 using UnityGameFramework.Runtime;
@@ -22,9 +24,9 @@ namespace HotfixBusiness.UI
             GetBindComponents(gameObject);
 
 /*--------------------Auto generate start button listener.Do not modify!--------------------*/
-            m_Btn_Login.onClick.AddListener(Btn_LoginEvent);
-            m_Btn_Login1.onClick.AddListener(Btn_Login1Event);
-            m_Btn_UIButtonTest.onClick.AddListener(Btn_UIButtonTestEvent);
+			 m_Btn_Login.onClick.AddListener(Btn_LoginEvent);
+			 m_Btn_Login1.onClick.AddListener(Btn_Login1Event);
+			 m_Btn_Middle.onClick.AddListener(Btn_MiddleEvent);
 /*--------------------Auto generate end button listener.Do not modify!----------------------*/
             m_RImg_bg.SetTexture(AssetUtility.UI.GetTexturePath("loading_bg"));
             m_Img_Icon.SetSprite(AssetUtility.UI.GetSpriteCollectionPath("Icon"),AssetUtility.UI.GetSpritePath("Icon/Icon"));
@@ -37,7 +39,10 @@ namespace HotfixBusiness.UI
             procedure.ChangeStateToMain();
         }
         private void Btn_Login1Event(){}
-        private void Btn_UIButtonTestEvent(){}
+		private void Btn_MiddleEvent(){
+            ProcedureLogin procedure = (ProcedureLogin)GameEntry.Procedure.CurrentProcedure;
+            procedure.ChangeStateToBag();
+        }
 /*--------------------Auto generate footer.Do not add anything below the footer!------------*/
-    }
+	}
 }
