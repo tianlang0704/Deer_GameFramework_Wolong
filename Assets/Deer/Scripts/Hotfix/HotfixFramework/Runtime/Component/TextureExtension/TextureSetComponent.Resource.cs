@@ -1,3 +1,5 @@
+using System;
+using Cysharp.Threading.Tasks;
 using GameFramework;
 using GameFramework.Resource;
 using UnityEngine;
@@ -11,32 +13,10 @@ namespace UGFExtensions.Texture
         /// 资源组件
         /// </summary>
         private ResourceComponent m_ResourceComponent;
-        private LoadAssetCallbacks m_LoadAssetCallbacks;
 
         private void InitializedResources()
         {
             m_ResourceComponent = UnityGameFramework.Runtime.GameEntry.GetComponent<ResourceComponent>();
-            m_LoadAssetCallbacks = new LoadAssetCallbacks(OnLoadAssetSuccess, OnLoadAssetFailure);
-        }
-
-        private void OnLoadAssetFailure(string assetName, LoadResourceStatus status, string errormessage, object userdata)
-        {
-            Log.Error("Can not load Texture2D from '{1}' with error message '{2}'.",assetName,errormessage);
-        }
-
-        private void OnLoadAssetSuccess(string assetName, object asset, float duration, object userdata)
-        {
-            ISetTexture2dObject setTexture2dObject = (ISetTexture2dObject)userdata;
-            Texture2D texture =  asset as Texture2D;
-            if (texture != null)
-            {
-                m_TexturePool.Register(TextureItemObject.Create(setTexture2dObject.Texture2dFilePath, texture, TextureLoad.FromResource,m_ResourceComponent), true);
-                SetTexture(setTexture2dObject,texture);
-            }
-            else
-            {
-                Log.Error($"Load Texture2D failure asset type is {asset.GetType()}.");
-            }
         }
         /// <summary>
         /// 通过资源系统设置图片
@@ -51,7 +31,31 @@ namespace UGFExtensions.Texture
             }
             else
             {
-                m_ResourceComponent.LoadAsset(setTexture2dObject.Texture2dFilePath, typeof(Texture2D),m_LoadAssetCallbacks,setTexture2dObject);
+                // m_ResourceComponent.LoadAsset(setTexture2dObject.Texture2dFilePath, typeof(Texture2D),m_LoadAssetCallbacks,setTexture2dObject);
+                UniTask.Void(async () =>
+                {
+                    try
+                    {
+                        var texture =
+                            await m_ResourceComponent.LoadAsset<Texture2D>(setTexture2dObject.Texture2dFilePath);
+                        if (texture != null)
+                        {
+                            m_TexturePool.Register(
+                                TextureItemObject.Create(setTexture2dObject.Texture2dFilePath, texture,
+                                    TextureLoad.FromResource, m_ResourceComponent), true);
+                            SetTexture(setTexture2dObject, texture);
+                        }
+                        else
+                        {
+                            Log.Error($"Load Texture2D failure asset type is {texture.GetType()}.");
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Error("Can not load Texture2D from '{1}' with error message '{2}'.", setTexture2dObject.Texture2dFilePath, e.Message);
+                    }
+                    
+                });
             }
         }
     }

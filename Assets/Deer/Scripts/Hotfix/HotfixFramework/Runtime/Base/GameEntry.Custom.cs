@@ -7,6 +7,7 @@ using Main.Runtime.Procedure;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Cysharp.Threading.Tasks;
 using HotfixFramework.Runtime;
 using UGFExtensions.SpriteCollection;
 using UGFExtensions.Texture;
@@ -67,27 +68,22 @@ public partial class GameEntry
     /// </summary>
     private static void LoadCustomComponent() 
     {
-        GameEntryMain.Resource.LoadAsset("Assets/Deer/AssetsHotfix/GF/Customs.prefab", new LoadAssetCallbacks(loadAssetSuccessCallback,loadAssetFailureCallback));
-    }
-
-    private static void loadAssetFailureCallback(string assetName, LoadResourceStatus status, string errorMessage, object userData)
-    {
-        
-    }
-
-    private static void loadAssetSuccessCallback(string assetName, object asset, float duration, object userData)
-    {
-        if (GameObject.Find("DeerGF/Customs")!= null)
+        UniTask.Void(async () =>
         {
-            Resource.UnloadAsset(asset);
-            return;
-        }
-        GameObject gameObject = UnityEngine.Object.Instantiate((GameObject)asset);
-        gameObject.name = "Customs";
-        gameObject.transform.parent = GameObject.Find("DeerGF").transform;
-        ResetProcedure();
-        ResetUIFormHelper();
+            var asset = await GameEntryMain.Resource.LoadAsset<GameObject>("Assets/Deer/AssetsHotfix/GF/Customs.prefab");
+            if (GameObject.Find("DeerGF/Customs")!= null)
+            {
+                Resource.UnloadAsset(asset);
+                return;
+            }
+            GameObject gameObject = UnityEngine.Object.Instantiate(asset);
+            gameObject.name = "Customs";
+            gameObject.transform.parent = GameObject.Find("DeerGF").transform;
+            ResetProcedure();
+            ResetUIFormHelper(); 
+        });
     }
+    
     private static List<Assembly> m_HotfixAssemblys;
     private static ProcedureBase m_EntranceProcedureBase;
     private static string m_EntranceProcedureTypeName = "HotfixBusiness.Procedure.ProcedurePreload";

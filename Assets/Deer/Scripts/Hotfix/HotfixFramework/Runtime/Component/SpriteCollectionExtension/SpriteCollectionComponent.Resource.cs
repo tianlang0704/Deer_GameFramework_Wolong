@@ -1,5 +1,9 @@
+using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using GameFramework.Resource;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityGameFramework.Runtime;
 
 namespace UGFExtensions.SpriteCollection
@@ -10,36 +14,12 @@ namespace UGFExtensions.SpriteCollection
         /// 资源组件
         /// </summary>
         private ResourceComponent m_ResourceComponent;
-        private LoadAssetCallbacks m_LoadAssetCallbacks;
         
         private void InitializedResources()
         {
             m_ResourceComponent = UnityGameFramework.Runtime.GameEntry.GetComponent<ResourceComponent>();
-            m_LoadAssetCallbacks = new LoadAssetCallbacks(OnLoadAssetSuccess, OnLoadAssetFailure);
-        }
-        
-        private void OnLoadAssetFailure(string assetName, LoadResourceStatus status, string errormessage, object userdata)
-        {
-            Log.Error("Can not load SpriteCollection from '{1}' with error message '{2}'.",assetName,errormessage);
         }
 
-        private void OnLoadAssetSuccess(string assetName, object asset, float duration, object userdata)
-        {
-            ISetSpriteObject setSpriteObject = (ISetSpriteObject)userdata;
-            SpriteCollection collection = (SpriteCollection)asset;
-            m_SpriteCollectionPool.Register(SpriteCollectionItemObject.Create(setSpriteObject.CollectionPath, collection,m_ResourceComponent), false);
-            m_SpriteCollectionBeingLoaded.Remove(setSpriteObject.CollectionPath);
-            m_WaitSetObjects.TryGetValue(setSpriteObject.CollectionPath, out LinkedList<ISetSpriteObject> awaitSetImages);
-            LinkedListNode<ISetSpriteObject> current = awaitSetImages?.First;
-            while (current != null)
-            {
-                m_SpriteCollectionPool.Spawn(setSpriteObject.CollectionPath);
-                current.Value.SetSprite(collection.GetSprite(current.Value.SpritePath));
-                m_LoadSpriteObjectsLinkedList.AddLast(new LoadSpriteObject(current.Value, collection));
-                current = current.Next;
-            }
-        }
-        
         /// <summary>
         /// 设置精灵
         /// </summary>
@@ -72,7 +52,29 @@ namespace UGFExtensions.SpriteCollection
             }
 
             m_SpriteCollectionBeingLoaded.Add(setSpriteObject.CollectionPath);
-            m_ResourceComponent.LoadAsset(setSpriteObject.CollectionPath,typeof(SpriteCollection),m_LoadAssetCallbacks,setSpriteObject);
+            UniTask.Void(async () =>
+            {
+                try
+                {
+                    var obj = await m_ResourceComponent.LoadAsset<Object>(setSpriteObject.CollectionPath);
+                    var collection = obj as SpriteCollection;
+                    m_SpriteCollectionPool.Register(SpriteCollectionItemObject.Create(setSpriteObject.CollectionPath, collection, m_ResourceComponent), false);
+                    m_SpriteCollectionBeingLoaded.Remove(setSpriteObject.CollectionPath);
+                    m_WaitSetObjects.TryGetValue(setSpriteObject.CollectionPath, out LinkedList<ISetSpriteObject> awaitSetImages);
+                    LinkedListNode<ISetSpriteObject> current = awaitSetImages?.First;
+                    while (current != null)
+                    {
+                        m_SpriteCollectionPool.Spawn(setSpriteObject.CollectionPath);
+                        current.Value.SetSprite(collection.GetSprite(current.Value.SpritePath));
+                        m_LoadSpriteObjectsLinkedList.AddLast(new LoadSpriteObject(current.Value, collection));
+                        current = current.Next;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Log.Error("Can not load SpriteCollection from '{1}' with error message '{2}'.", setSpriteObject.CollectionPath, e.Message);
+                }
+            });
         }
     }
 }

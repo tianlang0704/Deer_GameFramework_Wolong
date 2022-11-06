@@ -101,14 +101,15 @@ namespace UnityGameFramework.Runtime
                 return;
             }
 
-            if (baseComponent.EditorResourceMode)
-            {
-                m_SceneManager.SetResourceManager(baseComponent.EditorResourceHelper);
-            }
-            else
-            {
-                m_SceneManager.SetResourceManager(GameFrameworkEntry.GetModule<IResourceManager>());
-            }
+            // if (baseComponent.EditorResourceMode)
+            // {
+            //     m_SceneManager.SetResourceManager(baseComponent.EditorResourceHelper);
+            // }
+            // else
+            // {
+            //     m_SceneManager.SetResourceManager(GameFrameworkEntry.GetModule<IResourceManager>());
+            // }
+            m_SceneManager.SetResourceManager(AddressableManager.Instance);
         }
 
         /// <summary>

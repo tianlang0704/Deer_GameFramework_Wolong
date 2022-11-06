@@ -118,12 +118,6 @@ public class FrameworkGlobalSettings
     }
 
     [Header("Config")]
-    [Tooltip("是否读取本地表 UnityEditor 下起作用")]
-    [SerializeField] private bool m_IsReadLocalConfigInEditor = true;
-    public bool ReadLocalConfigInEditor { get { return m_IsReadLocalConfigInEditor; } }
-    [SerializeField]
-    private string m_ConfigVersionFileName = "ConfigVersion.xml";
-    public string ConfigVersionFileName { get { return m_ConfigVersionFileName; } }
     [SerializeField]
     private string m_ConfigFolderName = "LubanConfig";
     public string ConfigFolderName { get { return m_ConfigFolderName; } }

@@ -19,7 +19,7 @@ public sealed partial class Language_Config :  Bright.Config.BeanBase
     {
         Id = _buf.ReadInt();
         English = _buf.ReadString();
-        Schinese = _buf.ReadString();
+        Chinese = _buf.ReadString();
         PostInit();
     }
 
@@ -39,7 +39,7 @@ public sealed partial class Language_Config :  Bright.Config.BeanBase
     /// <summary>
     /// 简体中文
     /// </summary>
-    public string Schinese { get; private set; }
+    public string Chinese { get; private set; }
 
     public const int __ID__ = -580972247;
     public override int GetTypeId() => __ID__;
@@ -58,7 +58,7 @@ public sealed partial class Language_Config :  Bright.Config.BeanBase
         return "{ "
         + "Id:" + Id + ","
         + "English:" + English + ","
-        + "Schinese:" + Schinese + ","
+        + "Chinese:" + Chinese + ","
         + "}";
     }
     

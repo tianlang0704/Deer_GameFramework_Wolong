@@ -1,6 +1,7 @@
 .idea
 .vs
 .vsconfig
+.vscode
 *.csproj
 Library
 Logs
@@ -27,3 +28,16 @@ Assets/Deer/AssetsHotfix/Assembly
 CommitResources/setup/cwRsync4_client_jb51
 LubanTools/setup/proto
 BuildPackageIOS
+ABBuild
+AppBuild
+HybridCLRData/HotUpdateDlls
+LubanTools/DesignerConfigs/.cache.meta
+HybridCLRData/LocalIl2CppData-WindowsEditor
+HybridCLRData/iOSBuild
+CommitResources
+DockerHttpServer
+UserSettings/Layouts/default-2021.dwlt
+Assets/HybridCLRData/Generated
+ServerData
+Assets/AddressableAssetsData/Windows/addressables_content_state.bin
+UserSettings/Layouts/default-2021.dwlt

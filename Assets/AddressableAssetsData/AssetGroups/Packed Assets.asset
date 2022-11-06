@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Packed Assets
+  m_EditorClassIdentifier: 
+  m_GroupName: Packed Assets
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b42e492bd290f514cbbfc7b2467edf56
+  m_SerializeEntries:
+  - m_GUID: 6746815f97aeaf842bee3c97ae1aa3db
+    m_Address: Assets/Deer/AssetsNative
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - high_prio
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 14a7cf7427dc07b4e9e5ea481e49a2e8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: aba6cca1c3a75424ca52ed86ec1868c6, type: 2}
+    - {fileID: 11400000, guid: fc0846d02f0fe4a4293bf0a7062dac12, type: 2}

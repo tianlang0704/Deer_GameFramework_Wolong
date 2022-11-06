@@ -6,10 +6,12 @@
 //修改时间:2022-06-05 18-42-47
 //版 本:0.1 
 // ===============================================
+
+using System;
 using GameFramework.Resource;
 using Main.Runtime.Procedure;
 using System.Collections.Generic;
-using HotfixBusiness.DataUser;
+using Cysharp.Threading.Tasks;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 using UnityEngine;
 
@@ -18,7 +20,6 @@ namespace HotfixBusiness.Procedure
     public class ProcedurePreload : ProcedureBase
     {
         private ProcedureOwner m_procedureOwner = null;
-        private HashSet<string> m_LoadConfigFlag = new HashSet<string>();
 
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
@@ -28,63 +29,33 @@ namespace HotfixBusiness.Procedure
 
             m_procedureOwner = procedureOwner;
             //初始化所有角色信息管理器
-            DataUserManager.Instance.enabled = true;
-            PreloadConfig();
-            if (GameEntry.Base.EditorResourceMode)
+            UniTask.Void(async () =>
             {
-                return;
-            }
+                await PreloadConfig();
+                // ChangeState<ProcedureLogin>(procedureOwner);
+                ChangeState<ProcedureMenu>(procedureOwner);
+            });
+            
         }
         protected override void OnUpdate(ProcedureOwner procedureOwner, float elapseSeconds, float realElapseSeconds)
         {
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
-            if (IsPreloadFinish())
-            {
-                //ChangeState<ProcedureLogin>(procedureOwner);
-                ChangeState<ProcedureMenu>(procedureOwner);
-            }
         }
         protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
         {
             base.OnLeave(procedureOwner, isShutdown);
         }
-        private bool IsPreloadFinish()
-        {
-            if (m_LoadConfigFlag.Count == 0)
-            {
-                return true;
-            }
-
-            return false;
-        }
         #region Config
-        private void PreloadConfig()
+        private async UniTask PreloadConfig()
         {
-            m_LoadConfigFlag.Clear();
-            m_LoadConfigFlag.Add("Config");
-            //移动StreamingAssets 目录 LubanConfig 到沙盒目录
-            if (GameEntryMain.Resource.ResourceMode == ResourceMode.Package)
+            try
             {
-                //单机包模式
-                GameEntry.Config.MoveOnlyReadPathConfigVersionFile((bool result, int t, int c) => {
-                    if (result)
-                    {
-                        GameEntry.Config.LoadAllUserConfig(OnLoadConfigComplete);
-                    }
-                });
+                await GameEntry.Config.LoadAllUserConfig();
             }
-            else
-                GameEntry.Config.LoadAllUserConfig(OnLoadConfigComplete);
-        }
-        private void OnLoadConfigComplete(bool result, string resultMessage)
-        {
-            if (result)
+            catch (Exception e)
             {
-                m_LoadConfigFlag.Remove("Config");
-            }
-            else
-            {
-                Logger.ColorInfo(ColorType.cadetblue, resultMessage);
+                Logger.ColorInfo(ColorType.cadetblue, e.Message);
+                throw;
             }
         }
         #endregion

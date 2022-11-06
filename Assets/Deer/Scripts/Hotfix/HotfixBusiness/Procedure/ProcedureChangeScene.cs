@@ -20,29 +20,37 @@ using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedure
 namespace HotfixBusiness.Procedure
 {
     public class ProcedureChangeScene : ProcedureBase
-	{
-		private int? m_UIFormSerialId;
+	// {
+	// 	private int? m_UIFormSerialId;
 
-		private bool m_LoadSceneComplete;
-        private string m_NextProcedure;
-        private int m_NextLevelId = -1;
+	// 	private bool m_LoadSceneComplete;
+    //     private string m_NextProcedure;
+    //     private int m_NextLevelId = -1;
 
+    //     protected override void OnEnter(ProcedureOwner procedureOwner)
+    //     {
+    //         base.OnEnter(procedureOwner);
+    //         m_NextProcedure = procedureOwner.GetData<VarString>("nextProcedure");
+    //         try
+    //         {
+    //             int raceId = procedureOwner.GetData<VarInt16>("RaceId");
+    //             UIData_Race tmpRaceData;
+    //             GameEntry.Config.Tables.TbUIData_Race.DataMap.TryGetValue(raceId, out tmpRaceData);
+	// 			m_NextLevelId = tmpRaceData.RaceIndex;
+	// 		}
+    //         catch (System.Exception ex)
+    //         {
+    //             Logger.Error("Get VarInt16(levelId) Failed:" + ex.Message);
+    //         }
+
+    {
+        private bool m_LoadSceneComplete;
+        private System.Type m_nextProcedure;
+        private string m_sceneName;
         protected override void OnEnter(ProcedureOwner procedureOwner)
         {
             base.OnEnter(procedureOwner);
-            m_NextProcedure = procedureOwner.GetData<VarString>("nextProcedure");
-            try
-            {
-                int raceId = procedureOwner.GetData<VarInt16>("RaceId");
-                UIData_Race tmpRaceData;
-                GameEntry.Config.Tables.TbUIData_Race.DataMap.TryGetValue(raceId, out tmpRaceData);
-				m_NextLevelId = tmpRaceData.RaceIndex;
-			}
-            catch (System.Exception ex)
-            {
-                Logger.Error("Get VarInt16(levelId) Failed:" + ex.Message);
-            }
-
+            (m_sceneName, m_nextProcedure) = ((string, System.Type))procedureOwner.GetData<VarTuple>("nextProcedure");
             OnStartLoadScene();
             GameEntry.Event.Subscribe(LoadSceneSuccessEventArgs.EventId, OnHandleLoadSceneSuccess);
             GameEntry.Event.Subscribe(LoadSceneFailureEventArgs.EventId, OnHandleLoadSceneFailure);
@@ -59,8 +67,9 @@ namespace HotfixBusiness.Procedure
             base.OnUpdate(procedureOwner, elapseSeconds, realElapseSeconds);
             if (m_LoadSceneComplete)
             {
-                procedureOwner.SetData<VarInt16>("levelId", (short)m_NextLevelId);
-                ChangeState(procedureOwner, Utility.Assembly.GetType(Constant.Scene.GetProcedureName(m_NextProcedure)));
+                // procedureOwner.SetData<VarInt16>("levelId", (short)m_NextLevelId);
+                // ChangeState(procedureOwner, Utility.Assembly.GetType(Constant.Scene.GetProcedureName(m_NextProcedure)));
+                ChangeState(procedureOwner, m_nextProcedure);
             }
         }
 
@@ -90,20 +99,21 @@ namespace HotfixBusiness.Procedure
             GameEntry.Entity.HideAllLoadedEntities();
             GameEntry.ObjectPool.ReleaseAllUnused();
             GameEntry.Resource.ForceUnloadUnusedAssets(true);
+        //     string sceneName = Constant.Scene.GetSceneName(m_NextProcedure);
+        //     if (m_NextLevelId >= 0)
+        //     {
+        //         sceneName = string.Format("{0}{1}", sceneName, m_NextLevelId);
+        //         GameEntry.Setting.SetString("LoadedScene", sceneName);
+        //     }
 
-            string sceneName = Constant.Scene.GetSceneName(m_NextProcedure);
-            if (m_NextLevelId >= 0)
-            {
-                sceneName = string.Format("{0}{1}", sceneName, m_NextLevelId);
-                GameEntry.Setting.SetString("LoadedScene", sceneName);
-            }
+        //     string scenePath = AssetUtility.Scene.GetSceneAsset(sceneName);
+        //     GameEntry.Scene.LoadScene(scenePath, Constant.AssetPriority.SceneAsset);
 
-            string scenePath = AssetUtility.Scene.GetSceneAsset(sceneName);
-            GameEntry.Scene.LoadScene(scenePath, Constant.AssetPriority.SceneAsset);
-
-            //设置主相机位置
-            SetMainCamTrans();
-		}
+        //     //设置主相机位置
+        //     SetMainCamTrans();
+		// }
+            GameEntry.Scene.LoadScene(AssetUtility.Scene.GetSceneAsset(m_sceneName), Constant.AssetPriority.SceneAsset);
+        }
 
         void UnloadAllScene() 
         {

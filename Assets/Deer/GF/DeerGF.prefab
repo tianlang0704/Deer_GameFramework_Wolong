@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -718,39 +719,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
       propertyPath: m_AvailableProcedureTypeNames.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[0]
-      value: Main.Runtime.Procedure.ProcedureCheckVersion
-      objectReference: {fileID: 0}
-    - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[1]
       value: Main.Runtime.Procedure.ProcedureInitResources
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[2]
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[1]
       value: Main.Runtime.Procedure.ProcedureLauncher
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[3]
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[2]
       value: Main.Runtime.Procedure.ProcedureLoadAssembly
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[4]
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[3]
       value: Main.Runtime.Procedure.ProcedureSplash
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
-      propertyPath: m_AvailableProcedureTypeNames.Array.data[5]
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[4]
       value: Main.Runtime.Procedure.ProcedureUpdateResources
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
+      propertyPath: m_AvailableProcedureTypeNames.Array.data[5]
+      value: Main.Runtime.Procedure.ProcedureLoadAssembly
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[6]
-      value: Deer.ProcedureLogin
+      value: Main.Runtime.Procedure.ProcedureSplash
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[7]
-      value: Deer.ProcedureMain
+      value: Main.Runtime.Procedure.ProcedureUpdateResources
       objectReference: {fileID: 0}
     - target: {fileID: 11405216, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
       propertyPath: m_AvailableProcedureTypeNames.Array.data[8]
@@ -794,11 +795,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11497722, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
       propertyPath: m_ResourceMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497722, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
+      propertyPath: m_ReadWritePathType
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11499388, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}
       propertyPath: m_EditorResourceMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237385d2c8c47c04b91b378ccf8a5957, type: 3}

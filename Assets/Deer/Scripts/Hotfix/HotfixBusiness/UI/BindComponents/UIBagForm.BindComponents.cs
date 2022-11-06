@@ -8,7 +8,6 @@ namespace HotfixBusiness.UI
 	{
 		private RectTransform m_Trans_imge;
 		private UIButtonSuper m_Btn_Test;
-		private UIButtonSuper m_Btn_Test1;
 
 		private void GetBindComponents(GameObject go)
 		{
@@ -16,7 +15,6 @@ namespace HotfixBusiness.UI
 
 			m_Trans_imge = autoBindTool.GetBindComponent<RectTransform>(0);
 			m_Btn_Test = autoBindTool.GetBindComponent<UIButtonSuper>(1);
-			m_Btn_Test1 = autoBindTool.GetBindComponent<UIButtonSuper>(2);
 		}
 	}
 }

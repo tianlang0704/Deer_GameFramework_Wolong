@@ -24,8 +24,8 @@ namespace UnityGameFramework.Runtime
 
         private float m_GameSpeedBeforePause = 1f;
 
-        [SerializeField]
-        private bool m_EditorResourceMode = true;
+        // [SerializeField]
+        // private bool m_EditorResourceMode = true;
 
         [SerializeField]
         private Language m_EditorLanguage = Language.Unspecified;
@@ -60,17 +60,19 @@ namespace UnityGameFramework.Runtime
         /// <summary>
         /// 获取或设置是否使用编辑器资源模式（仅编辑器内有效）。
         /// </summary>
-        public bool EditorResourceMode
-        {
-            get
-            {
-                return m_EditorResourceMode;
-            }
-            set
-            {
-                m_EditorResourceMode = value;
-            }
-        }
+        // public bool EditorResourceMode
+        // {
+            // get
+            // {
+            //     return m_EditorResourceMode;
+            // }
+            // set
+            // {
+            //     m_EditorResourceMode = value;
+            // }
+        // }
+        public bool EditorResourceMode => AddressableManager.Instance.IsEditorMode();
+
 
         /// <summary>
         /// 获取或设置编辑器语言（仅编辑器内有效）。
@@ -203,8 +205,8 @@ namespace UnityGameFramework.Runtime
                 Utility.Converter.ScreenDpi = DefaultDpi;
             }
 
-            m_EditorResourceMode &= Application.isEditor;
-            if (m_EditorResourceMode)
+            var editorResourceMode = EditorResourceMode & Application.isEditor;
+            if (editorResourceMode)
             {
                 Log.Info("During this run, Game Framework will use editor resource files, which you should validate first.");
             }
