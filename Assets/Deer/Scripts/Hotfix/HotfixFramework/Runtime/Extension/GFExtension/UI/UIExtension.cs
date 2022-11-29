@@ -24,12 +24,12 @@ public static class UIExtension
     private static string m_UIGroupHelperTypeName = "Main.Runtime.DeerUIGroupHelper";
     private static UIGroupHelperBase m_CustomUIGroupHelper = null;
 
-    /// <summary>
-    /// 血条节点
-    /// </summary>
-    private static HealthbarRoot m_HealthbarRoot;
-    public static HealthbarRoot HealthbarRoot
-    {
+    // /// <summary>
+    // /// 血条节点
+    // /// </summary>
+    // private static HealthbarRoot m_HealthbarRoot;
+    // public static HealthbarRoot HealthbarRoot
+    // {
     //     get
     //     {
     //         if (m_HealthbarRoot == null)
@@ -73,29 +73,20 @@ public static class UIExtension
     // {
     //     return ShootTextRoot;
     // }
-    // public static bool HasUIForm(this UIComponent uiComponent, UIFormId uiFormId, string uiGroupName = null)
-    // {
-    //     return uiComponent.HasUIForm((int)uiFormId, uiGroupName);
-    // }
-    // public static bool HasUIForm(this UIComponent uiComponent, int uiFormId, string uiGroupName = null)
-    // {
-    //     UIForm_Config uIForm_Config = GameEntry.Config.Tables.TbUIForm_Config.Get(uiFormId);
-    //     if (uIForm_Config == null)
-    //     {
-    //         return false;
-    //     }
-
-    //     string assetName = AssetUtility.UI.GetUIFormAsset(uIForm_Config.AssetName);
-    //     if (string.IsNullOrEmpty(uiGroupName))
-        private static Transform m_InstanceRoot;
-        private static IUIManager m_UIManager;
-        private static string m_UIGroupHelperTypeName = "Main.Runtime.DeerUIGroupHelper";
-        private static UIGroupHelperBase m_CustomUIGroupHelper = null;
-        
-        public static UIBaseForm GetUIForm(this UIComponent uiComponent, UIFormId uiFormId, string uiGroupName = null)
+    public static bool HasUIForm(this UIComponent uiComponent, UIFormId uiFormId, string uiGroupName = null)
+    {
+        return uiComponent.HasUIForm((int)uiFormId, uiGroupName);
+    }
+    public static bool HasUIForm(this UIComponent uiComponent, int uiFormId, string uiGroupName = null)
+    {
+        UIForm_Config uIForm_Config = GameEntry.Config.Tables.TbUIForm_Config.Get(uiFormId);
+        if (uIForm_Config == null)
         {
-            return uiComponent.HasUIForm(assetName);
+            return false;
         }
+
+        string assetName = AssetUtility.UI.GetUIFormAsset(uIForm_Config.AssetName);
+        if (string.IsNullOrEmpty(uiGroupName)) return uiComponent.HasUIForm(assetName);
 
         IUIGroup uiGroup = uiComponent.GetUIGroup(uiGroupName);
         if (uiGroup == null)

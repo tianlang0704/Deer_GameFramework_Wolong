@@ -6,7 +6,7 @@ using UnityGameFramework.Runtime;
 using ProcedureOwner = GameFramework.Fsm.IFsm<GameFramework.Procedure.IProcedureManager>;
 
 /// <summary>
-/// Ö÷Ò³Ãæ Á÷³Ì
+/// ï¿½ï¿½Ò³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 /// </summary>
 public class ProcedureMenu : ProcedureBase
 {
@@ -23,14 +23,14 @@ public class ProcedureMenu : ProcedureBase
 
         GameEntry.Sound.PlayMusic((int)SoundId.MenuBGM);
 
-        if (m_LightTrans == null)
-		{
-			m_LightTrans = GameObject.Find("Directional Light").transform;
-		}
-        if (m_LightTrans != null)
-		{
-			m_LightTrans.gameObject.SetActive(true);
-		}
+  //       if (m_LightTrans == null)
+		// {
+		// 	m_LightTrans = GameObject.Find("Directional Light").transform;
+		// }
+  //       if (m_LightTrans != null)
+		// {
+		// 	m_LightTrans.gameObject.SetActive(true);
+		// }
 	}
 
     protected override void OnLeave(ProcedureOwner procedureOwner, bool isShutdown)
@@ -49,14 +49,14 @@ public class ProcedureMenu : ProcedureBase
     public void PlayGame(int raceId, Vector3 playerPos)
     {
         GameEntry.Setting.SetInt("raceId", raceId);
-        Debug.Log($"tackor Ñ¡ÖÐ³¡¾°: {raceId} {playerPos}");
+        Debug.Log($"tackor Ñ¡ï¿½Ð³ï¿½ï¿½ï¿½: {raceId} {playerPos}");
 
         m_ProcedureOwner.SetData<VarString>("nextProcedure", ProcedureEnum.ProcedureGamePlay.ToString());
         m_ProcedureOwner.SetData<VarInt16>("RaceId", (short)raceId);
 
         ChangeState<ProcedureChangeScene>(m_ProcedureOwner);
 
-		GameObject.Find("Directional Light").SetActive(false);
+		// GameObject.Find("Directional Light").SetActive(false);
 	}
 
 }
