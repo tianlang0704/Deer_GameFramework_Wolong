@@ -29,3 +29,8 @@ Assets/Deer/AssetsHotfix/Assemblies
 CommitResources/setup/cwRsync4_client_jb51
 LubanTools/setup/proto
 BuildPackageIOS
+AppBuild
+ABBuild
+.vscode
+ServerData
+Assets/Deer/AssetsHotfix/Assembly
