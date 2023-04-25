@@ -79,7 +79,7 @@ namespace UnityGameFramework.Editor.ResourceTools
         {
             AOTMetaAssembliesHelper.FindAllAOTMetaAssemblies(buildTarget);
             FolderUtils.ClearFolder(AssemblyTextAssetPath);
-            foreach (var dll in SettingsUtil.HotUpdateAssemblyFiles)
+            foreach (var dll in SettingsUtil.HotUpdateAssemblyFilesIncludePreserved)
             {
                 string dllPath = $"{SettingsUtil.GetHotUpdateDllsOutputDirByTarget(buildTarget)}/{dll}";
                 string dllBytesPath = $"{AssemblyTextAssetPath}/{dll}{DeerSettingsUtils.HybridCLRCustomGlobalSettings.AssemblyTextAssetExtension}";
@@ -104,7 +104,7 @@ namespace UnityGameFramework.Editor.ResourceTools
                 }
                 File.Copy(dllPath, dllBytesPath, true);
             }
-            DeerSettingsUtils.SetHybridCLRHotUpdateAssemblies(SettingsUtil.HotUpdateAssemblyFiles);
+            DeerSettingsUtils.SetHybridCLRHotUpdateAssemblies(SettingsUtil.HotUpdateAssemblyFilesIncludePreserved);
             AssetDatabase.Refresh();
         }
     }

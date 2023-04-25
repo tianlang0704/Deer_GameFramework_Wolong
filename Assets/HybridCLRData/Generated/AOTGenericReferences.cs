@@ -1,141 +1,155 @@
 public class AOTGenericReferences : UnityEngine.MonoBehaviour
 {
 
+	// {{ AOT assemblies
+	// GameFramework.dll
+	// Google.Protobuf.dll
+	// Main.Runtime.dll
+	// System.Core.dll
+	// System.dll
+	// UniTask.dll
+	// UnityEngine.CoreModule.dll
+	// UnityGameFramework.Runtime.dll
+	// mscorlib.dll
+	// }}
+
 	// {{ constraint implement type
 	// }} 
 
-	// {{ AOT generic type
-	//Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1<System.Object>
-	//Cysharp.Threading.Tasks.UniTask`1<System.Object>
-	//Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>
-	//GameFramework.Fsm.FsmState`1<System.Object>
-	//GameFramework.Fsm.IFsm`1<System.Object>
-	//GameFramework.GameFrameworkAction`2<System.Byte,UnityEngine.Vector3>
-	//GameFramework.ObjectPool.IObjectPool`1<System.Object>
-	//GameFramework.Variable`1<System.ValueTuple`2<System.Object,System.Object>>
-	//Google.Protobuf.Collections.RepeatedField`1<System.Int32>
-	//Google.Protobuf.Collections.RepeatedField`1<System.Int64>
-	//Google.Protobuf.Collections.RepeatedField`1<System.Object>
-	//Google.Protobuf.IDeepCloneable`1<System.Object>
-	//Google.Protobuf.IMessage`1<System.Object>
-	//Google.Protobuf.MessageParser`1<System.Object>
-	//SerializableDictionary`2<System.Object,System.Object>
-	//Singleton`1<System.Object>
-	//SingletonMono`1<System.Object>
-	//System.Action`1<System.Int64>
-	//System.Action`1<System.Object>
-	//System.Action`2<System.Byte,System.Object>
-	//System.Action`2<System.Object,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.Int32,System.Object>
-	//System.Collections.Generic.Dictionary`2<System.Object,System.Int32>
-	//System.Collections.Generic.Dictionary`2<System.Object,System.Object>
-	//System.Collections.Generic.Dictionary`2<cfg.Error.EErrorCode,System.Object>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Int32>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.Int32,System.Object>
-	//System.Collections.Generic.Dictionary`2/Enumerator<System.Object,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection<System.Int32,System.Object>
-	//System.Collections.Generic.Dictionary`2/ValueCollection/Enumerator<System.Int32,System.Object>
-	//System.Collections.Generic.HashSet`1<System.Int32>
-	//System.Collections.Generic.HashSet`1<System.Object>
-	//System.Collections.Generic.HashSet`1/Enumerator<System.Object>
-	//System.Collections.Generic.IEnumerator`1<System.Object>
-	//System.Collections.Generic.IList`1<System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.Int32,System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.Object,System.Int32>
-	//System.Collections.Generic.KeyValuePair`2<System.Int64,System.Object>
-	//System.Collections.Generic.KeyValuePair`2<System.Object,System.Object>
-	//System.Collections.Generic.LinkedList`1<System.Object>
-	//System.Collections.Generic.LinkedListNode`1<System.Object>
-	//System.Collections.Generic.List`1<UnityEngine.Vector3>
-	//System.Collections.Generic.List`1<UnityEngine.Touch>
-	//System.Collections.Generic.List`1<UnityEngine.EventSystems.RaycastResult>
-	//System.Collections.Generic.List`1<System.Int32>
-	//System.Collections.Generic.List`1<System.Object>
-	//System.Collections.Generic.List`1/Enumerator<UnityEngine.Touch>
-	//System.Collections.Generic.List`1/Enumerator<System.Int32>
-	//System.Collections.Generic.List`1/Enumerator<System.Object>
-	//System.Collections.Generic.Queue`1<System.Int64>
-	//System.Collections.Generic.Queue`1<System.Int32>
-	//System.Collections.Generic.Queue`1<System.Object>
-	//System.Collections.Generic.SortedDictionary`2<System.Int64,System.Object>
-	//System.Collections.Generic.SortedDictionary`2/Enumerator<System.Int64,System.Object>
-	//System.EventHandler`1<System.Object>
-	//System.Func`1<Cysharp.Threading.Tasks.UniTaskVoid>
-	//System.Func`1<System.Object>
-	//System.Func`2<System.Object,Cysharp.Threading.Tasks.UniTask`1<System.Object>>
-	//System.IEquatable`1<System.Object>
-	//System.Nullable`1<System.Int32>
-	//System.Nullable`1<UnityEngine.Color>
-	//System.Predicate`1<UnityEngine.Touch>
-	//System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Byte>
-	//System.Runtime.CompilerServices.TaskAwaiter`1<System.Byte>
-	//System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>
-	//System.Threading.Tasks.Task`1<System.Object>
-	//System.Threading.Tasks.Task`1<System.Byte>
-	//System.Threading.Tasks.TaskCompletionSource`1<System.Object>
-	//System.Threading.Tasks.TaskCompletionSource`1<System.Byte>
-	//System.ValueTuple`2<System.Object,System.Object>
-	//UnityEngine.Events.UnityEvent`1<UnityEngine.Vector2>
+	// {{ AOT generic types
+	// Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>
+	// Cysharp.Threading.Tasks.UniTask<object>
+	// Cysharp.Threading.Tasks.UniTask.Awaiter<object>
+	// GameFramework.Fsm.FsmState<object>
+	// GameFramework.Fsm.IFsm<object>
+	// GameFramework.GameFrameworkAction<byte,UnityEngine.Vector3>
+	// GameFramework.ObjectPool.IObjectPool<object>
+	// GameFramework.Variable<System.ValueTuple<object,object>>
+	// Google.Protobuf.Collections.RepeatedField<int>
+	// Google.Protobuf.Collections.RepeatedField<long>
+	// Google.Protobuf.Collections.RepeatedField<object>
+	// Google.Protobuf.IDeepCloneable<object>
+	// Google.Protobuf.IMessage<object>
+	// Google.Protobuf.MessageParser<object>
+	// SerializableDictionary<object,object>
+	// System.Action<long>
+	// System.Action<object>
+	// System.Action<object,object>
+	// System.Collections.Generic.Dictionary<object,int>
+	// System.Collections.Generic.Dictionary<object,object>
+	// System.Collections.Generic.Dictionary<int,object>
+	// System.Collections.Generic.Dictionary.Enumerator<int,object>
+	// System.Collections.Generic.Dictionary.Enumerator<object,int>
+	// System.Collections.Generic.Dictionary.ValueCollection<int,object>
+	// System.Collections.Generic.Dictionary.ValueCollection.Enumerator<int,object>
+	// System.Collections.Generic.HashSet<object>
+	// System.Collections.Generic.HashSet<int>
+	// System.Collections.Generic.HashSet.Enumerator<object>
+	// System.Collections.Generic.IEnumerator<object>
+	// System.Collections.Generic.IList<object>
+	// System.Collections.Generic.KeyValuePair<long,object>
+	// System.Collections.Generic.KeyValuePair<int,object>
+	// System.Collections.Generic.KeyValuePair<object,int>
+	// System.Collections.Generic.LinkedList<object>
+	// System.Collections.Generic.LinkedListNode<object>
+	// System.Collections.Generic.List<UnityEngine.Touch>
+	// System.Collections.Generic.List<UnityEngine.Vector3>
+	// System.Collections.Generic.List<int>
+	// System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>
+	// System.Collections.Generic.List<object>
+	// System.Collections.Generic.List.Enumerator<int>
+	// System.Collections.Generic.List.Enumerator<UnityEngine.Touch>
+	// System.Collections.Generic.List.Enumerator<object>
+	// System.Collections.Generic.Queue<int>
+	// System.Collections.Generic.Queue<long>
+	// System.Collections.Generic.Queue<object>
+	// System.Collections.Generic.SortedDictionary<long,object>
+	// System.Collections.Generic.SortedDictionary.Enumerator<long,object>
+	// System.EventHandler<object>
+	// System.Func<Cysharp.Threading.Tasks.UniTaskVoid>
+	// System.Func<object>
+	// System.Func<object,Cysharp.Threading.Tasks.UniTask<object>>
+	// System.IEquatable<object>
+	// System.Nullable<int>
+	// System.Nullable<UnityEngine.Color>
+	// System.Predicate<UnityEngine.Touch>
+	// System.Runtime.CompilerServices.AsyncTaskMethodBuilder<byte>
+	// System.Runtime.CompilerServices.TaskAwaiter<object>
+	// System.Runtime.CompilerServices.TaskAwaiter<byte>
+	// System.Threading.Tasks.Task<object>
+	// System.Threading.Tasks.Task<byte>
+	// System.Threading.Tasks.TaskCompletionSource<byte>
+	// System.Threading.Tasks.TaskCompletionSource<object>
+	// System.ValueTuple<object,object>
+	// UnityEngine.Events.UnityEvent<UnityEngine.Vector2>
 	// }}
 
 	public void RefMethods()
 	{
-		// System.Object ComponentAutoBindTool::GetBindComponent<System.Object>(System.Int32)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>,cfg.Tables/<LoadAsync>d__25>(Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>&,cfg.Tables/<LoadAsync>d__25&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder::Start<cfg.Tables/<LoadAsync>d__25>(cfg.Tables/<LoadAsync>d__25&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1<System.Object>::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask/Awaiter,Deer.ConfigManager/<LoadAllUserConfig>d__5>(Cysharp.Threading.Tasks.UniTask/Awaiter&,Deer.ConfigManager/<LoadAllUserConfig>d__5&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1<System.Object>::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,Deer.ConfigManager/<ConfigLoader>d__6>(System.Runtime.CompilerServices.TaskAwaiter&,Deer.ConfigManager/<ConfigLoader>d__6&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1<System.Object>::Start<Deer.ConfigManager/<LoadAllUserConfig>d__5>(Deer.ConfigManager/<LoadAllUserConfig>d__5&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder`1<System.Object>::Start<Deer.ConfigManager/<ConfigLoader>d__6>(Deer.ConfigManager/<ConfigLoader>d__6&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>,UGFExtensions.Texture.TextureSetComponent/<>c__DisplayClass33_0/<<SetTextureByResources>b__0>d>(Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>&,UGFExtensions.Texture.TextureSetComponent/<>c__DisplayClass33_0/<<SetTextureByResources>b__0>d&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>,UGFExtensions.SpriteCollection.SpriteCollectionComponent/<>c__DisplayClass13_0/<<SetSprite>b__0>d>(Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>&,UGFExtensions.SpriteCollection.SpriteCollectionComponent/<>c__DisplayClass13_0/<<SetSprite>b__0>d&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>,GameEntry/<>c/<<LoadCustomComponent>b__83_0>d>(Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>&,GameEntry/<>c/<<LoadCustomComponent>b__83_0>d&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<UGFExtensions.SpriteCollection.SpriteCollectionComponent/<>c__DisplayClass13_0/<<SetSprite>b__0>d>(UGFExtensions.SpriteCollection.SpriteCollectionComponent/<>c__DisplayClass13_0/<<SetSprite>b__0>d&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<UGFExtensions.Texture.TextureSetComponent/<>c__DisplayClass33_0/<<SetTextureByResources>b__0>d>(UGFExtensions.Texture.TextureSetComponent/<>c__DisplayClass33_0/<<SetTextureByResources>b__0>d&)
-		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder::Start<GameEntry/<>c/<<LoadCustomComponent>b__83_0>d>(GameEntry/<>c/<<LoadCustomComponent>b__83_0>d&)
-		// System.Void GameFramework.Fsm.FsmState`1<System.Object>::ChangeState<System.Object>(GameFramework.Fsm.IFsm`1<System.Object>)
-		// System.Object GameFramework.Fsm.IFsm`1<System.Object>::GetData<System.Object>(System.String)
-		// System.Void GameFramework.Fsm.IFsm`1<System.Object>::SetData<System.Object>(System.String,System.Object)
-		// System.Object GameFramework.GameFrameworkEntry::GetModule<System.Object>()
-		// System.Void GameFramework.Network.INetworkChannel::Send<System.Object>(System.Object)
-		// System.Object GameFramework.ReferencePool::Acquire<System.Object>()
-		// System.String GameFramework.Utility/Text::Format<System.Object>(System.String,System.Object)
-		// System.String GameFramework.Utility/Text::Format<System.Object,System.Object>(System.String,System.Object,System.Object)
-		// Google.Protobuf.FieldCodec`1<System.Object> Google.Protobuf.FieldCodec::ForMessage<System.Object>(System.UInt32,Google.Protobuf.MessageParser`1<System.Object>)
-		// System.Object Google.Protobuf.ProtoPreconditions::CheckNotNull<System.Object>(System.Object,System.String)
-		// System.Object System.Activator::CreateInstance<System.Object>()
-		// System.Int32[] System.Array::Empty<System.Int32>()
-		// System.Object[] System.Array::Empty<System.Object>()
-		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Byte>::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Byte>,TimerComponent/<OnceTimerAsync>d__21>(System.Runtime.CompilerServices.TaskAwaiter`1<System.Byte>&,TimerComponent/<OnceTimerAsync>d__21&)
-		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Byte>::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Byte>,TimerComponent/<FrameAsync>d__22>(System.Runtime.CompilerServices.TaskAwaiter`1<System.Byte>&,TimerComponent/<FrameAsync>d__22&)
-		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Byte>::Start<TimerComponent/<OnceTimerAsync>d__21>(TimerComponent/<OnceTimerAsync>d__21&)
-		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1<System.Byte>::Start<TimerComponent/<FrameAsync>d__22>(TimerComponent/<FrameAsync>d__22&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>,UGFExtensions.Texture.TextureSetComponent/<SetTextureByNetworkAsync>d__24>(System.Runtime.CompilerServices.TaskAwaiter`1<System.Object>&,UGFExtensions.Texture.TextureSetComponent/<SetTextureByNetworkAsync>d__24&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>,UGFExtensions.SpriteCollection.SpriteCollectionComponent/<SetSpriteAsync>d__14>(Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>&,UGFExtensions.SpriteCollection.SpriteCollectionComponent/<SetSpriteAsync>d__14&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>,UGFExtensions.Texture.TextureSetComponent/<SetTextureByResourcesAsync>d__30>(Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>&,UGFExtensions.Texture.TextureSetComponent/<SetTextureByResourcesAsync>d__30&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter`1<System.Byte>,UGFExtensions.CancellationToken/<CancelAfter>d__5>(System.Runtime.CompilerServices.TaskAwaiter`1<System.Byte>&,UGFExtensions.CancellationToken/<CancelAfter>d__5&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>,ConfigComponent/<LoadAllUserConfig>d__6>(Cysharp.Threading.Tasks.UniTask`1/Awaiter<System.Object>&,ConfigComponent/<LoadAllUserConfig>d__6&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<ConfigComponent/<LoadAllUserConfig>d__6>(ConfigComponent/<LoadAllUserConfig>d__6&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<UGFExtensions.Texture.TextureSetComponent/<SetTextureByResourcesAsync>d__30>(UGFExtensions.Texture.TextureSetComponent/<SetTextureByResourcesAsync>d__30&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<UGFExtensions.SpriteCollection.SpriteCollectionComponent/<SetSpriteAsync>d__14>(UGFExtensions.SpriteCollection.SpriteCollectionComponent/<SetSpriteAsync>d__14&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<UGFExtensions.Texture.TextureSetComponent/<SetTextureByNetworkAsync>d__24>(UGFExtensions.Texture.TextureSetComponent/<SetTextureByNetworkAsync>d__24&)
-		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder::Start<UGFExtensions.CancellationToken/<CancelAfter>d__5>(UGFExtensions.CancellationToken/<CancelAfter>d__5&)
-		// System.Object UnityEngine.Component::GetComponent<System.Object>()
-		// System.Object UnityEngine.GameObject::GetComponent<System.Object>()
-		// System.Object UnityEngine.Object::Instantiate<System.Object>(System.Object)
-		// System.Object UnityExtension::GetOrAddComponent<System.Object>(UnityEngine.GameObject)
-		// System.Boolean UnityGameFramework.Runtime.FsmComponent::DestroyFsm<System.Object>()
-		// System.Object UnityGameFramework.Runtime.GameEntry::GetComponent<System.Object>()
-		// System.Object UnityGameFramework.Runtime.Helper::CreateHelper<System.Object>(System.String,System.Object)
-		// System.Void UnityGameFramework.Runtime.Log::Error<System.Object>(System.String,System.Object)
-		// System.Void UnityGameFramework.Runtime.Log::Error<System.Object,System.Object>(System.String,System.Object,System.Object)
-		// System.Void UnityGameFramework.Runtime.Log::Info<System.Object,System.Object>(System.String,System.Object,System.Object)
-		// System.Void UnityGameFramework.Runtime.Log::Info<System.Object,System.Object,System.Object>(System.String,System.Object,System.Object,System.Object)
-		// System.Void UnityGameFramework.Runtime.Log::Warning<System.Object>(System.String,System.Object)
-		// System.Void UnityGameFramework.Runtime.Log::Warning<System.Object,System.Object,System.Object>(System.String,System.Object,System.Object,System.Object)
-		// GameFramework.ObjectPool.IObjectPool`1<System.Object> UnityGameFramework.Runtime.ObjectPoolComponent::CreateMultiSpawnObjectPool<System.Object>(System.String,System.Single,System.Int32,System.Single,System.Int32)
-		// GameFramework.ObjectPool.IObjectPool`1<System.Object> UnityGameFramework.Runtime.ObjectPoolComponent::CreateSingleSpawnObjectPool<System.Object>(System.String,System.Single,System.Int32,System.Single,System.Int32)
-		// Cysharp.Threading.Tasks.UniTask`1<System.Object> UnityGameFramework.Runtime.ResourceComponent::LoadAsset<System.Object>(System.String)
-		// Cysharp.Threading.Tasks.UniTask`1<System.Object> UnityGameFramework.Runtime.ResourceComponent::LoadAssetAsync<System.Object>(System.String)
+		// object ComponentAutoBindTool.GetBindComponent<object>(int)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,ConfigComponent.<LoadAllUserConfig>d__6>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,ConfigComponent.<LoadAllUserConfig>d__6&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,cfg.Tables.<LoadAsync>d__13>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,cfg.Tables.<LoadAsync>d__13&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,HotfixBusiness.Procedure.ProcedurePreload.<PreloadConfig>d__4>(Cysharp.Threading.Tasks.UniTask.Awaiter&,HotfixBusiness.Procedure.ProcedurePreload.<PreloadConfig>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<cfg.Tables.<LoadAsync>d__13>(cfg.Tables.<LoadAsync>d__13&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<HotfixBusiness.Procedure.ProcedurePreload.<PreloadConfig>d__4>(HotfixBusiness.Procedure.ProcedurePreload.<PreloadConfig>d__4&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder.Start<ConfigComponent.<LoadAllUserConfig>d__6>(ConfigComponent.<LoadAllUserConfig>d__6&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,Deer.ConfigManager.<LoadAllUserConfig>d__1>(Cysharp.Threading.Tasks.UniTask.Awaiter&,Deer.ConfigManager.<LoadAllUserConfig>d__1&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter,Deer.ConfigManager.<ConfigLoader>d__2>(System.Runtime.CompilerServices.TaskAwaiter&,Deer.ConfigManager.<ConfigLoader>d__2&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,Deer.ConfigManager.<ConfigLoader>d__2>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,Deer.ConfigManager.<ConfigLoader>d__2&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<Deer.ConfigManager.<ConfigLoader>d__2>(Deer.ConfigManager.<ConfigLoader>d__2&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskMethodBuilder<object>.Start<Deer.ConfigManager.<LoadAllUserConfig>d__1>(Deer.ConfigManager.<LoadAllUserConfig>d__1&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,UGFExtensions.Texture.TextureSetComponent.<>c__DisplayClass33_0.<<SetTextureByResources>b__0>d>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,UGFExtensions.Texture.TextureSetComponent.<>c__DisplayClass33_0.<<SetTextureByResources>b__0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,GameEntry.<>c.<<LoadCustomComponent>b__83_0>d>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,GameEntry.<>c.<<LoadCustomComponent>b__83_0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,UGFExtensions.SpriteCollection.SpriteCollectionComponent.<>c__DisplayClass13_0.<<SetSprite>b__0>d>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,UGFExtensions.SpriteCollection.SpriteCollectionComponent.<>c__DisplayClass13_0.<<SetSprite>b__0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,HotfixBusiness.Procedure.ProcedureLogin.<>c.<<OnEnter>b__2_0>d>(Cysharp.Threading.Tasks.UniTask.Awaiter&,HotfixBusiness.Procedure.ProcedureLogin.<>c.<<OnEnter>b__2_0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter,HotfixBusiness.Procedure.ProcedurePreload.<>c__DisplayClass1_0.<<OnEnter>b__0>d>(Cysharp.Threading.Tasks.UniTask.Awaiter&,HotfixBusiness.Procedure.ProcedurePreload.<>c__DisplayClass1_0.<<OnEnter>b__0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<UGFExtensions.SpriteCollection.SpriteCollectionComponent.<>c__DisplayClass13_0.<<SetSprite>b__0>d>(UGFExtensions.SpriteCollection.SpriteCollectionComponent.<>c__DisplayClass13_0.<<SetSprite>b__0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<UGFExtensions.Texture.TextureSetComponent.<>c__DisplayClass33_0.<<SetTextureByResources>b__0>d>(UGFExtensions.Texture.TextureSetComponent.<>c__DisplayClass33_0.<<SetTextureByResources>b__0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<GameEntry.<>c.<<LoadCustomComponent>b__83_0>d>(GameEntry.<>c.<<LoadCustomComponent>b__83_0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<HotfixBusiness.Procedure.ProcedureLogin.<>c.<<OnEnter>b__2_0>d>(HotfixBusiness.Procedure.ProcedureLogin.<>c.<<OnEnter>b__2_0>d&)
+		// System.Void Cysharp.Threading.Tasks.CompilerServices.AsyncUniTaskVoidMethodBuilder.Start<HotfixBusiness.Procedure.ProcedurePreload.<>c__DisplayClass1_0.<<OnEnter>b__0>d>(HotfixBusiness.Procedure.ProcedurePreload.<>c__DisplayClass1_0.<<OnEnter>b__0>d&)
+		// System.Void GameFramework.Fsm.FsmState<object>.ChangeState<object>(GameFramework.Fsm.IFsm<object>)
+		// object GameFramework.Fsm.IFsm<object>.GetData<object>(string)
+		// System.Void GameFramework.Fsm.IFsm<object>.SetData<object>(string,object)
+		// object GameFramework.GameFrameworkEntry.GetModule<object>()
+		// System.Void GameFramework.Network.INetworkChannel.Send<object>(object)
+		// object GameFramework.ReferencePool.Acquire<object>()
+		// Cysharp.Threading.Tasks.UniTask<object> GameFramework.Resource.AddressableManager.LoadAssetAsync<object>(string)
+		// string GameFramework.Utility.Text.Format<object,object>(string,object,object)
+		// string GameFramework.Utility.Text.Format<object>(string,object)
+		// Google.Protobuf.FieldCodec<object> Google.Protobuf.FieldCodec.ForMessage<object>(uint,Google.Protobuf.MessageParser<object>)
+		// object Google.Protobuf.ProtoPreconditions.CheckNotNull<object>(object,string)
+		// object System.Activator.CreateInstance<object>()
+		// object[] System.Array.Empty<object>()
+		// int[] System.Array.Empty<int>()
+		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<byte>,TimerComponent.<OnceTimerAsync>d__21>(System.Runtime.CompilerServices.TaskAwaiter<byte>&,TimerComponent.<OnceTimerAsync>d__21&)
+		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder<byte>.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<byte>,TimerComponent.<FrameAsync>d__22>(System.Runtime.CompilerServices.TaskAwaiter<byte>&,TimerComponent.<FrameAsync>d__22&)
+		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder<byte>.Start<TimerComponent.<OnceTimerAsync>d__21>(TimerComponent.<OnceTimerAsync>d__21&)
+		// System.Void System.Runtime.CompilerServices.AsyncTaskMethodBuilder<byte>.Start<TimerComponent.<FrameAsync>d__22>(TimerComponent.<FrameAsync>d__22&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,UGFExtensions.Texture.TextureSetComponent.<SetTextureByResourcesAsync>d__30>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,UGFExtensions.Texture.TextureSetComponent.<SetTextureByResourcesAsync>d__30&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<object>,UGFExtensions.Texture.TextureSetComponent.<SetTextureByNetworkAsync>d__24>(System.Runtime.CompilerServices.TaskAwaiter<object>&,UGFExtensions.Texture.TextureSetComponent.<SetTextureByNetworkAsync>d__24&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<Cysharp.Threading.Tasks.UniTask.Awaiter<object>,UGFExtensions.SpriteCollection.SpriteCollectionComponent.<SetSpriteAsync>d__14>(Cysharp.Threading.Tasks.UniTask.Awaiter<object>&,UGFExtensions.SpriteCollection.SpriteCollectionComponent.<SetSpriteAsync>d__14&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.AwaitUnsafeOnCompleted<System.Runtime.CompilerServices.TaskAwaiter<byte>,UGFExtensions.CancellationToken.<CancelAfter>d__5>(System.Runtime.CompilerServices.TaskAwaiter<byte>&,UGFExtensions.CancellationToken.<CancelAfter>d__5&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<UGFExtensions.Texture.TextureSetComponent.<SetTextureByResourcesAsync>d__30>(UGFExtensions.Texture.TextureSetComponent.<SetTextureByResourcesAsync>d__30&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<UGFExtensions.Texture.TextureSetComponent.<SetTextureByNetworkAsync>d__24>(UGFExtensions.Texture.TextureSetComponent.<SetTextureByNetworkAsync>d__24&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<UGFExtensions.CancellationToken.<CancelAfter>d__5>(UGFExtensions.CancellationToken.<CancelAfter>d__5&)
+		// System.Void System.Runtime.CompilerServices.AsyncVoidMethodBuilder.Start<UGFExtensions.SpriteCollection.SpriteCollectionComponent.<SetSpriteAsync>d__14>(UGFExtensions.SpriteCollection.SpriteCollectionComponent.<SetSpriteAsync>d__14&)
+		// object UnityEngine.Component.GetComponent<object>()
+		// object UnityEngine.GameObject.GetComponent<object>()
+		// object UnityEngine.Object.Instantiate<object>(object)
+		// object UnityExtension.GetOrAddComponent<object>(UnityEngine.GameObject)
+		// bool UnityGameFramework.Runtime.FsmComponent.DestroyFsm<object>()
+		// object UnityGameFramework.Runtime.GameEntry.GetComponent<object>()
+		// object UnityGameFramework.Runtime.Helper.CreateHelper<object>(string,object)
+		// System.Void UnityGameFramework.Runtime.Log.Error<object,object>(string,object,object)
+		// System.Void UnityGameFramework.Runtime.Log.Error<object>(string,object)
+		// System.Void UnityGameFramework.Runtime.Log.Info<object,object>(string,object,object)
+		// System.Void UnityGameFramework.Runtime.Log.Info<object,object,object>(string,object,object,object)
+		// System.Void UnityGameFramework.Runtime.Log.Warning<object>(string,object)
+		// System.Void UnityGameFramework.Runtime.Log.Warning<object,object,object>(string,object,object,object)
+		// GameFramework.ObjectPool.IObjectPool<object> UnityGameFramework.Runtime.ObjectPoolComponent.CreateMultiSpawnObjectPool<object>(string,float,int,float,int)
+		// GameFramework.ObjectPool.IObjectPool<object> UnityGameFramework.Runtime.ObjectPoolComponent.CreateSingleSpawnObjectPool<object>(string,float,int,float,int)
+		// Cysharp.Threading.Tasks.UniTask<object> UnityGameFramework.Runtime.ResourceComponent.LoadAsset<object>(string)
+		// Cysharp.Threading.Tasks.UniTask<object> UnityGameFramework.Runtime.ResourceComponent.LoadAssetAsync<object>(string)
 	}
 }

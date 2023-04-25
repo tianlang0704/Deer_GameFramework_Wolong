@@ -39,9 +39,9 @@ public class SynAssemblysContent
         if (Time.time >= startTime + duration) return;
         startTime = Time.time;
         FindTwinsHybridCLRGlobalSettings();
-        if (DeerSettingsUtils.HybridCLRCustomGlobalSettings != null && SettingsUtil.HotUpdateAssemblyFiles != DeerSettingsUtils.HybridCLRCustomGlobalSettings.HotUpdateAssemblies)
+        if (DeerSettingsUtils.HybridCLRCustomGlobalSettings != null && SettingsUtil.HotUpdateAssemblyFilesIncludePreserved != DeerSettingsUtils.HybridCLRCustomGlobalSettings.HotUpdateAssemblies)
         {
-            DeerSettingsUtils.HybridCLRCustomGlobalSettings.HotUpdateAssemblies = SettingsUtil.HotUpdateAssemblyFiles;
+            DeerSettingsUtils.HybridCLRCustomGlobalSettings.HotUpdateAssemblies = SettingsUtil.HotUpdateAssemblyFilesIncludePreserved;
         }
 
         if (DeerSettingsUtils.HybridCLRCustomGlobalSettings != null && SettingsUtil.Enable != DeerSettingsUtils.HybridCLRCustomGlobalSettings.Enable)
