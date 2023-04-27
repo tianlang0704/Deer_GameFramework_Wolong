@@ -19,9 +19,9 @@ MonoBehaviour:
   hotUpdateAssemblyDefinitions: []
   hotUpdateAssemblies:
   - HotfixCommon
-  - HotfixMain
   - HotfixFramework.Runtime
   - HotfixBusiness
+  - HotfixMain
   preserveHotUpdateAssemblies: []
   hotUpdateDllCompileOutputRootDir: HybridCLRData/HotUpdateDlls
   externalHotUpdateAssembliyDirs: []
